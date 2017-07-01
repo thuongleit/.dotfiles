@@ -6,10 +6,14 @@ export DOC=$HOME/Documents
 export work=$HOME/workspace
 export GOPATH=$HOME/go
 export zsh=$HOME/.zsh
+export ANDROID_HOME=$HOME/Library/Android/sdk
 
 alias active='source $HOME/.zshrc'
 alias zshconfig='vi $HOME/.zshrc'
 alias work='cd $work'
+
+alias t='tig'
+alias del='rm -rf'
 
 # git aliases
 alias g='git'
@@ -30,6 +34,10 @@ alias gcm='git checkout master'
 alias gcd='git checkout develop'
 alias gcmsg='git commit -m'
 alias gco='git checkout'
+
+alias grso='git remote show origin'
+alias grh='git reset --hard'
+alias gr='git reset' 
 
 alias gd='git diff'
 alias gf='git fetch'
