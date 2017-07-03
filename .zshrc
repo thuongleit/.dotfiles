@@ -16,4 +16,4 @@ local ZSH_CONFIG=$HOME/.zsh
 source $ZSH_CONFIG/aliases.sh
 source $ZSH_CONFIG/functions.zsh
 
-export PATH=$HOME/bin:$GOPATH/bin:$PATH
+export PATH=$HOME/bin:$GOPATH/bin:$ANDROID_HOME/platform-tools:$PATH
