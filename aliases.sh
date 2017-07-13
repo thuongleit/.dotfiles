@@ -68,3 +68,9 @@ alias news='web_search ddg \!n'
 alias youtube='web_search ddg \!yt'
 alias map='web_search ddg \!m'
 alias image='web_search ddg \!i'
+
+#android command
+alias build='./gradlew clean build --stacktrace --info --debug'
+alias debug='./gradlew clean assembleDebug installDebug --stacktrace --info --debug'
+alias release='./gradlew clean assembleRelease installRelease --stacktrace --info --debug'
+
