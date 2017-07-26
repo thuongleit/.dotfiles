@@ -5,7 +5,7 @@ export DESKTOP=$HOME/Desktop
 export DOC=$HOME/Documents
 export work=$HOME/workspace
 export GOPATH=$HOME/go
-export zsh=$HOME/.zsh
+export config=$HOME/.config
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
 alias active='source $HOME/.zshrc'
