@@ -404,11 +404,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>584 86 445 77 0 0 1440 900 </string>
+	<string>584 37 445 77 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>428 202 796 473 0 0 1440 900 </string>
+	<string>428 155 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1438 896 0 0 1440 900 </string>
+	<string>0 18 1438 882 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>15 4 376 896 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -606,7 +606,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>61</integer>
+			<integer>700</integer>
 			<key>Command</key>
 			<string>tmux</string>
 			<key>Cursor Color</key>
@@ -967,7 +967,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Regular 9</string>
+			<string>SourceCodePro-Regular 10</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
