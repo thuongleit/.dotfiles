@@ -32,7 +32,7 @@ alias gcb='git checkout -b'
 alias gcl='git clone --recursive'
 alias gcm='git checkout master'
 alias gcd='git checkout develop'
-alias gcmsg='git commit -m'
+ias gcmsg='git commit -m'
 alias gco='git checkout'
 
 alias grso='git remote show origin'
@@ -71,6 +71,6 @@ alias image='web_search ddg \!i'
 
 #android command
 alias build='./gradlew clean build --stacktrace --info --debug'
-alias debug='./gradlew clean assembleDebug installDebug --stacktrace --info --debug'
-alias release='./gradlew clean assembleRelease installRelease --stacktrace --info --debug'
+alias run_debug='./gradlew clean assembleDebug installDebug --stacktrace --info --debug'
+alias run_release='./gradlew clean assembleRelease installRelease --stacktrace --info --debug'
 
