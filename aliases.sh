@@ -32,7 +32,7 @@ alias gcb='git checkout -b'
 alias gcl='git clone --recursive'
 alias gcm='git checkout master'
 alias gcd='git checkout develop'
-ias gcmsg='git commit -m'
+alias gcmsg='git commit -m'
 alias gco='git checkout'
 
 alias grso='git remote show origin'
