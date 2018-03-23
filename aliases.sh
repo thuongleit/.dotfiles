@@ -73,4 +73,4 @@ alias image='web_search ddg \!i'
 alias build='./gradlew clean build --stacktrace --info --debug'
 alias run_debug='./gradlew clean assembleDebug installDebug --stacktrace --info --debug'
 alias run_release='./gradlew clean assembleRelease installRelease --stacktrace --info --debug'
-
+alias do=todolist
