@@ -1,7 +1,13 @@
-echo "---------- Cloning zprezto ----------"
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-echo "---------- Cloning config -----------"
-git clone https://github.com/amilehu/my-macos-setup.git ~/.config
+#!/bin/sh
+
+echo "Setting up your Mac"
+
+# Check Homebrew and install it if need
+if test ! $(which brew); then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if 
 
 echo "---------- Setting up ----------"
 ln -s ~/.zprezto/runcoms/zlogin ~/.zlogin
@@ -12,4 +18,4 @@ ln -s ~/.zprezto/runcoms/zshenv ~/.zshenv
 ln -s ~/.config/.zshrc ~/.zshrc
 chsh -s $(which zsh)
 source ~/.zshrc
-echo "---------- YAY! Enjoy your ENV ----------"
+echo "---------- YAY! Enjoy your MAC ----------"
