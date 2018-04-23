@@ -59,15 +59,21 @@ check_system (){
     if [ ! -d "$DOTFILE_ROOT" ]; then
         echo "Clone dotfiles repositoty..."
         git clone "$dotfile_github_repo" "$DOTFILE_ROOT"
+        cd "$DOTFILE_ROOT"
         echo
     else
         # if the dotfiles folder is mine
         if [ -f "$DOTFILE_ROOT/.thuongleit" ]; then
+            echo "Updating your dotfiles repository..."
+            cd "$DOTFILE_ROOT"
             git pull origin master
+            echo
         else
-            echo "Another dotfiles reposity exists. Backing up..."
+            echo "Another dotfiles folder exists. Backing it up..."
+            mv "$DOTFILE_ROOT" "${DOTFILE_ROOT}.backup"
             echo "Clone dotfiles repository..."
             git clone "$dotfile_github_repo" "$DOTFILE_ROOT"
+            cd "$DOTFILE_ROOT"
             echo
         fi
     fi
@@ -156,33 +162,33 @@ link_file () {
     fi
 }
 
-install_dotfile (){
+install_dotfiles (){
     info "Installing dotfiles..."
 
     if [ "$(uname -s)" == "Darwin" ]; then
         # Link symlink files
         local overwrite_all=false backup_all=false skip_all=false
 
-        for src in $(find -H "$DOTFILE_ROOT" -maxdepth 3 -name '*.symlink' -not -path '*.git*')
+        echo "Make symlink..."
+        for src in $(find -H "$DOTFILE_ROOT" -name '*.symlink' -not -path '*.git*')
         do
-            dst="$HOME/.$(basename "${src%.*}")"
-            link_file "$src" "$dst"
+           dst="$HOME/.$(basename "${src%.*}")"
+           link_file "$src" "$dst"
         done
 
-        # Run install scripts
-        # Include path,......
+        # Run install scripts of all modules
+        echo "Run installation scripts from modules..."
+        find ./modules -name install.sh | while read installer ; do sh -c "${installer}" ; done
     fi
 }
-
-echo "---------- Setting up ----------"
 
 check_system
 install_dotfiles
 git_config
 
-
 # Change shell to zsh if need
-if [ $0 != "-zsh" ]; then
+if [ "$SHELL" != "$(which zsh)" ]; then
+    echo "Changing shell to zsh..."
     chsh -s $(which zsh)
 fi
 
