@@ -9,12 +9,13 @@ alias del='rm -rf'
 alias showfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hidefiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
-alias -g .......='../../../../../..'
-alias -g ........='../../../../../../..'
+alias -g ..='cd ..'
+alias -g ...='cd ../..'
+alias -g ....='cd ../../..'
+alias -g .....='cd ../../../..'
+alias -g ......='cd ../../../../..'
+alias -g .......='cd ../../../../../..'
+alias -g ........='cd ../../../../../../..'
 
 alias google='web_search google'                  # Note: websearch function is loaded in function file, see above
 alias ddg='web_search ddg'

@@ -172,7 +172,7 @@ install_dotfiles (){
         echo "Make symlink..."
         for src in $(find -H "$DOTFILE_ROOT" -name '*.symlink' -not -path '*.git*')
         do
-           dst="$HOME/.$(basename "${src%.*}")"
+           dst="$HOME/$(basename "${src%.*}")"
            link_file "$src" "$dst"
         done
 
