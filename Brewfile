@@ -59,6 +59,7 @@ brew 'tig'
 brew 'gradle'
 brew 'tmux'
 brew 'midnight-commander'
+brew 'dep' #Go dependency management tool
 
 # Development
 #brew 'php'
@@ -86,7 +87,7 @@ cask 'java'
 #cask 'quip'
 #cask 'sequel-pro'
 #cask 'shuttle'
-#cask 'slack'
+cask 'slack'
 #cask 'sublime-text'
 #cask 'torbrowser'
 #cask 'tower'
@@ -96,7 +97,7 @@ cask 'java'
 #cask 'virtualbox-extension-pack'
 #cask 'vlc'
 #cask 'zoomus'
-#cask '1password'
+cask '1password'
 #cask 'adium'
 cask 'atom'
 #cask 'firefox'
@@ -133,7 +134,7 @@ cask 'android-studio'
 #mas 'Sip', id: 507257563
 mas 'Sketch', id: 402476602
 #mas 'Spark', id: 1176895641
-#mas 'The Unarchiver', id: 425424353
+mas 'The Unarchiver', id: 425424353
 #mas 'Things', id: 904280696
 #mas 'Tweetbot', id: 557168941
 #mas 'Unsplash Wallpapers', id: 1284863847

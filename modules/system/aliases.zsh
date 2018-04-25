@@ -1,10 +1,8 @@
-alias active='source $HOME/.zshrc'
-alias zshconfig='vi $HOME/.zshrc'
+alias active_env='source $HOME/.zshrc'
 alias work='cd $work'
+alias dotfiles='cd $dotfiles'
 
 alias t='tig'
-alias del='rm -rf'
-
 #macos aliases
 alias showfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hidefiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
@@ -25,3 +23,8 @@ alias news='web_search ddg \!n'
 alias youtube='web_search ddg \!yt'
 alias map='web_search ddg \!m'
 alias image='web_search ddg \!i'
+
+alias -g l='ls'
+alias -g ll='ls -l'
+alias -g la='ls -al'
+alias -g li='ls -ali'
