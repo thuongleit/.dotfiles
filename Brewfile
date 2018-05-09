@@ -74,7 +74,7 @@ brew 'dep' #Go dependency management tool
 #cask 'eid-be'
 #cask 'eid-be-viewer'
 #cask 'firefox'
-#cask 'google-backup-and-sync'
+cask 'google-backup-and-sync'
 cask 'google-chrome'
 #cask 'gpgtools'
 #cask 'grammarly'
@@ -87,7 +87,7 @@ cask 'java'
 #cask 'quip'
 #cask 'sequel-pro'
 #cask 'shuttle'
-cask 'slack'
+#cask 'slack'
 #cask 'sublime-text'
 #cask 'torbrowser'
 #cask 'tower'
@@ -99,7 +99,7 @@ cask 'slack'
 #cask 'zoomus'
 cask '1password'
 #cask 'adium'
-cask 'atom'
+#cask 'atom'
 #cask 'firefox'
 #cask 'garmin-express'
 #cask 'handbrake'
@@ -110,6 +110,10 @@ cask 'atom'
 #cask 'transmission'
 #cask 'tunnelbear'
 cask 'android-studio'
+cask 'android-sdk'
+cask 'caskroom/versions/java8'
+cask 'skype'
+cask 'dropbox'
 
 # Quicklook
 #cask 'qlcolorcode'
@@ -125,6 +129,8 @@ cask 'android-studio'
 #cask 'font-source-serif-pro'
 
 # Install Mac App Store apps
+mas 'Magnet', id: 441258766
+mas 'Xcode', id: 497799835
 #mas '1Password', id: 443987910
 #mas 'Byword', id: 420212497
 #mas 'Deckset', id: 847496013
@@ -132,9 +138,9 @@ cask 'android-studio'
 #mas 'Giphy Capture', id: 668208984
 #mas 'Paw', id: 584653203
 #mas 'Sip', id: 507257563
-mas 'Sketch', id: 402476602
+#mas 'Sketch', id: 402476602
 #mas 'Spark', id: 1176895641
-mas 'The Unarchiver', id: 425424353
+#mas 'The Unarchiver', id: 425424353
 #mas 'Things', id: 904280696
 #mas 'Tweetbot', id: 557168941
 #mas 'Unsplash Wallpapers', id: 1284863847
