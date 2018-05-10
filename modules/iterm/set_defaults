@@ -1,0 +1,2 @@
+# Set defaults setting for iTerm2 app
+defaults delete com.googlecode.iterm2

@@ -5,6 +5,7 @@ cd ~
 DOTFILE_ROOT="$(pwd -P)/.dotfiles"
 
 set -e
+export DOTFILE_ROOT="$DOTFILE_ROOT"
 
 echo "Setting up your Mac"
 
@@ -27,7 +28,7 @@ fail () {
 }
 
 check_system (){
-    local dotfile_github_repo="git@github.com:thuongleit/.dotfiles.git"
+    local dotfile_github_repo="https://github.com/thuongleit/.dotfiles.git"
 
     # Check Homebrew and install it if need
     if [ ! $(which brew) ]; then
