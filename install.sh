@@ -9,54 +9,38 @@ export DOTFILE_ROOT="$DOTFILE_ROOT"
 
 echo "Setting up your Mac"
 
-info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
-}
-
-user () {
-  printf "\r  [ \033[0;33m??\033[0m ] $1\n"
-}
-
-success () {
-  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
-}
-
-fail () {
-  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
-  echo ''
-  exit
-}
-
 check_system (){
-    local dotfile_github_repo="https://github.com/thuongleit/.dotfiles.git"
-
     # Check Homebrew and install it if need
-    if [ ! $(which brew) ]; then
-        echo "Installing Homebrew..."
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        brew doctor
-        echo
-    else
-        echo "Updating Homebrew..."
-        brew update; brew upgrade
-        echo
-    fi
+    # if whoami is admin
+    if [ $(is_admin "$(whoami)") ]; then
+        if [ ! $(which brew) ]; then
+            echo "Installing Homebrew..."
+            /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+            brew doctor
+            echo
+        else
+            echo "Updating Homebrew..."
+            brew update; brew upgrade
+            echo
+        fi
 
-    # Check Xcode Command Line Tools and install it if need
-    if [ ! $(xcode-select -p) ]; then
-        echo "Installing Xcode Command Line Tools..."
-        xcode-select --install
-        echo
-    fi
+        # Check Xcode Command Line Tools and install it if need
+        if [ ! $(xcode-select -p) ]; then
+            echo "Installing Xcode Command Line Tools..."
+            xcode-select --install
+            echo
+        fi
 
-    # Check git
-    if [ ! $(which git) ]; then
-        echo "Installing git..."
-        brew install git
-        echo
+        # Check git
+        if [ ! $(which git) ]; then
+            echo "Installing git..."
+            brew install git
+            echo
+        fi
     fi
 
     # Check there is a cloned of dotfile repository?
+    local dotfile_github_repo="https://github.com/thuongleit/.dotfiles.git"
     if [ ! -d "$DOTFILE_ROOT" ]; then
         echo "Clone dotfiles repositoty..."
         git clone "$dotfile_github_repo" "$DOTFILE_ROOT"
@@ -167,6 +151,9 @@ install_dotfiles (){
         find ./modules -name install.sh | while read installer ; do sh -c "${installer}" ; done
     fi
 }
+
+# active global functions when executing the script
+source $DOTFILE_ROOT/global_functions.sh
 
 check_system
 install_dotfiles

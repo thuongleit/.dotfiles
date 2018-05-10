@@ -1,5 +1,8 @@
 #!/bin/sh
 
 cd $HOME/.dotfiles
+source global_functions.sh
 
-brew bundle
+if [ $(is_admin "$(whoami)") ]; then
+    brew bundle
+fi
