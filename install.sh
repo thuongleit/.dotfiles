@@ -80,21 +80,6 @@ check_system (){
     fi
 }
 
-git_config (){
-    if [ ! $(git config --global user.email) ]; then
-        echo 'Setting up your git config'
-        user ' - What is your git author name?'
-        read -e git_authorname
-        user ' - What is your git author email?'
-        read -e git_authoremail
-
-        git config --global user.name "$git_authorname"
-        git config --global user.email "$git_authoremail"
-
-        success "git configged"
-    fi
-}
-
 link_file () {
     local src=$1 dst=$2
 
@@ -185,7 +170,6 @@ install_dotfiles (){
 
 check_system
 install_dotfiles
-git_config
 
 # Change shell to zsh if need
 if [ "$SHELL" != "$(which zsh)" ]; then
