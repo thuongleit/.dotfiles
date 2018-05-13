@@ -127,6 +127,7 @@ cask 'dropbox'
 #cask 'font-source-code-pro'
 #cask 'font-source-sans-pro'
 #cask 'font-source-serif-pro'
+cask 'font-inconsolata'
 
 # Install Mac App Store apps
 mas 'Magnet', id: 441258766
