@@ -76,6 +76,7 @@ brew 'dep' #Go dependency management tool
 #cask 'firefox'
 cask 'google-backup-and-sync'
 cask 'google-chrome'
+cask 'google-featured-photos'
 #cask 'gpgtools'
 #cask 'grammarly'
 #cask 'insomnia'
