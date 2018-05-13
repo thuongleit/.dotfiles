@@ -1,12 +1,10 @@
-#!/bin/sh
-
-# Global functions for our configuration files
+# Global functions for our configuration 
 
 info () {
-    printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+    printf "\r  [ \033[00;34m->\033[0m ] $1\n"
 }
 
-user () {
+ask () {
     printf "\r  [ \033[0;33m??\033[0m ] $1\n"
 }
 
@@ -17,9 +15,12 @@ success () {
 fail () {
     printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
     echo ''
-    exit
+    exit 1
 }
 
 is_admin() {
     id -Gn $1 | grep -q -w admin
 }
+
+# JAVA_HOME PATH for java8
+JAVA8_HOME=/Library/Java/JavaVirtualMachines/"$(cd /Library/Java/JavaVirtualMachines; ls | grep jdk1.8)"/Contents/Home
