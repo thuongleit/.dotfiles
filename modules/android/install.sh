@@ -63,7 +63,7 @@ install() {
         info "Installing ${package}..."
         sdkmanager "${package}" --sdk_root="${ANDROID_HOME}"
     done < sdk_packages.txt
-    
+
     copy_android_studio_preferences
     copy_android_studio_plugins
 
