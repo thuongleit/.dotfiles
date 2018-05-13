@@ -5,7 +5,7 @@ emulator
 extras;android;gapid;3
 extras;android;m2repository
 extras;google;auto
-extras;google;g...e_play_services
+extras;google;goole_play_services
 extras;google;instantapps
 extras;google;m2repository
 extras;intel;Ha...ecution_Manager
