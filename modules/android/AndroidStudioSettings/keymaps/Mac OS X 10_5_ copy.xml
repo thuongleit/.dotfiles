@@ -2,6 +2,9 @@
   <action id="ActivateBuildToolWindow">
     <keyboard-shortcut first-keystroke="alt 1" />
   </action>
+  <action id="ActivatePreviewToolWindow">
+    <keyboard-shortcut first-keystroke="alt 2" />
+  </action>
   <action id="ActivateTerminalToolWindow">
     <keyboard-shortcut first-keystroke="alt f12" />
     <keyboard-shortcut first-keystroke="meta 8" />
