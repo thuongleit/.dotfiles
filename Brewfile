@@ -60,6 +60,7 @@ brew 'gradle'
 brew 'tmux'
 brew 'midnight-commander'
 brew 'dep' #Go dependency management tool
+brew 'dockutil'
 
 # Development
 #brew 'php'
