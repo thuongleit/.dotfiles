@@ -9,41 +9,41 @@ tap 'caskroom/fonts'
 #tap caskroom/versions
 
 # Install ZSH
-#brew 'zsh'
-#brew 'zsh-completions'
+brew 'zsh'
+brew 'zsh-completions'
 
 # Install GNU core utilities (those that come with macOS are outdated)
-#brew 'coreutils'
+brew 'coreutils'
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-#brew 'findutils'
+brew 'findutils'
 
 # Install Bash 4
 #brew 'bash'
 
 # Install more recent versions of some macOS tools
-#brew 'grep'
+brew 'grep'
 
 # Install Binaries
-#brew 'awscli'
-#brew 'git'
+brew 'awscli'
+brew 'git'
 #brew 'hub'
 #brew 'tree'
-#brew 'mackup'
+brew 'mackup'
 #brew 'mas'
 #brew 'trash'
 #brew 'ack'
 #brew 'coreutils'
 brew 'go'
 #brew 'grc'
-#brew 'imagemagick'
+brew 'imagemagick'
 #brew 'jp2a'
 #brew 'jq'
 #brew 'libcaca', args: ['with-imlib2']
 #brew 'libgit2'
 #brew 'openssl'
 #brew 'node'
-#brew 'readline'
+brew 'readline'
 #brew 'postgresql'
 #brew 'puma/puma/puma-dev'
 #brew 'ruby-build'
@@ -68,7 +68,7 @@ brew 'dep' #Go dependency management tool
 
 # Apps
 #cask 'aerial'
-#cask 'alfred'
+cask 'alfred'
 #cask 'caffeine'
 #cask 'docker'
 #cask 'eid-be'
@@ -78,7 +78,7 @@ cask 'google-backup-and-sync'
 cask 'google-chrome'
 cask 'google-featured-photos'
 #cask 'gpgtools'
-#cask 'grammarly'
+cask 'grammarly'
 #cask 'insomnia'
 cask 'iterm2'
 cask 'java'
@@ -101,7 +101,6 @@ cask 'java'
 cask '1password'
 #cask 'adium'
 #cask 'atom'
-#cask 'firefox'
 #cask 'garmin-express'
 #cask 'handbrake'
 #cask 'mapbox-studio'
