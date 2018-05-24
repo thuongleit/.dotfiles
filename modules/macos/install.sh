@@ -1,17 +1,10 @@
 #!/bin/sh
 
-echo "Customizing your macOS"
+source $dotfiles/common.lib
 
-set -e
+info "Customizing your macOS"
 
-cd $DOTFILE_ROOT/modules/macos
+. $dotfiles/modules/macos/preferences.sh
+. $dotfiles/modules/macos/dock.sh
 
-chmod +x preferences.sh
-./preferences.sh
-
-chmod +x dock.sh
-./dock.sh
-
-cd $DOTFILE_ROOT
-
-echo "Finished customzing macOS"
+success "Finished customzing macOS"
