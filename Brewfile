@@ -108,6 +108,7 @@ cask '1password'
 #cask 'seashore'
 #cask 'slack'
 #cask 'steam'
+cask 'noti' #Receive Android notifications on your MAC
 #cask 'transmission'
 #cask 'tunnelbear'
 cask 'android-studio'
