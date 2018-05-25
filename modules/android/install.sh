@@ -62,7 +62,7 @@ install() {
     do 
         info "Installing ${package}..."
         sdkmanager "${package}" --sdk_root="${ANDROID_HOME}"
-    done < sdk_packages.txt
+    done < $dotfiles/modules/android/sdk_packages.txt
 
     copy_android_studio_preferences
     copy_android_studio_plugins
@@ -93,7 +93,7 @@ uninstall() {
     do
         info "Uninstalling ${package}..."
         sdkmanager --uninstall "${package}" --sdk_root="$ANDROID_HOME"
-    done < sdk_packages.txt
+    done < $dotfiles/modudles/android/sdk_packages.txt
 
     for app in "${required_apps[@]}"; do
         info "Uninstalling ${app}..."

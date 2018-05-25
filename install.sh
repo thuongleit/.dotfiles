@@ -4,7 +4,7 @@
 cd ~
 DOTFILE_ROOT="$(pwd -P)/.dotfiles"
 
-set -e
+#set -e
 export DOTFILE_ROOT="$DOTFILE_ROOT"
 
 echo "Setting up your Mac"
@@ -153,7 +153,7 @@ install_dotfiles (){
 }
 
 # active global functions when executing the script
-source $DOTFILE_ROOT/global_functions.sh
+source $DOTFILE_ROOT/common.lib
 
 check_system
 install_dotfiles
@@ -164,7 +164,5 @@ if [ "$SHELL" != "$(which zsh)" ]; then
     chsh -s $(which zsh)
 fi
 
-# Active the env
-source ~/.zshrc
-
-echo ---------- YAY! Enjoy your MAC ----------
+echo "Done. Note that some of these changes require a logout/restart to take effect."
+success ---------- YAY! Enjoy your MAC ----------

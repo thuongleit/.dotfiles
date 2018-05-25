@@ -1,8 +1,8 @@
 #!/bin/sh
 
-cd $HOME/.dotfiles
-source global_functions.sh
+source $dotfiles/common.lib
 
-if [ $(is_admin "$(whoami)") ]; then
-    brew bundle
-fi
+brew doctor
+brew bundle
+brew upgrade
+

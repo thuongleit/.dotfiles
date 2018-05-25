@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# Thanks to Mathias Bynens! https://mths.be/macos
-
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
@@ -31,18 +29,32 @@ sudo nvram SystemAudioVolume=" "
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
-# Set highlight color to orange 
-#defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.874510 0.701961" 
+# Set highlight color to orange
+# Possible values:
+#  1.000000 0.733333 0.721569 : Red
+#  1.000000 0.874510 0.701961 : Orange
+#  1.000000 0.937255 0.690196 : Yellow
+#  0.752941 0.964706 0.678431 : Green
+#  N/A (Deleted value)        : Blue --> defaults delete NSGlobalDomain AppleHighlightColor
+#  0.752941 0.964706 0.678431 : Green
+# 0.968627 0.831373 1.000000  : Purple
+# 1.000000 0.749020 0.823529  : Pink
+# 0.929412 0.870588 0.792157  : Brown
+# 0.847059 0.847059 0.862745  : Graphite
+# Put your values
+defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745"
+#defaults delete NSGlobalDomain AppleHighlightColor
 
-# Set Appearance (For Buttons, Menu, and Windows) to Blue
+# Set Appearance (For Buttons, Menu, and Windows) to Graphite
 defaults write NSGlobalDomain AppleAquaColorVariant -int 6
-# Possible value: 1 for Graphite
+# Possible value: 1 for Blue
 
 # Use dark menu bar and Dock
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+defaults write NSGlobalDomain AppleInterfaceTheme -string "Dark"
 
 # Automatically hide and show the menu bar
-defaults write NSGlobaleDomain _HIHideMenuBar -int 1
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -102,7 +114,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 sudo pmset -a hibernatemode 0
 
 # Remove the sleep image file to save disk space
-sudo rm /private/var/vm/sleepimage
+sudo rm -f /private/var/vm/sleepimage
 # Create a zero-byte file instead…
 sudo touch /private/var/vm/sleepimage
 # …and make sure it can’t be rewritten
@@ -144,24 +156,53 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 15 
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+# Use F1, F2, etc. keys as standard function keys
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+
+# Use force Click and haptic feedback
+defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool true
+
+# Look up and data detectors with Force Click with one figure
+defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -int 1
+defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -int 0
 
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
-defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
+defaults write NSGlobalDomain AppleLanguages -array "en-FI" "vi-FI" "fi-FI"
+defaults write NSGlobalDomain AppleLocale -string "en_FI@currency=EUR"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleTemperatureUnit -string "Celsius"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Show language menu in the top right corner of the boot screen
 sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "Europe/Helsinki" > /dev/null
+sudo systemsetup -settimezone "Europe/Finland" > /dev/null
+
+# Set Keyboard Input Sources
+# Delete all keyboard layouts
+defaults delete com.apple.HIToolbox AppleEnabledInputSources
+
+# English US Standard keyboard layout
+defaults write com.apple.HIToolbox AppleEnabledInputSources -array-add '{InputSourceKind="Keyboard Layout";"KeyboardLayout ID"=0;"KeyboardLayout Name"="U.S.";}'
+# Vietnamese Keyboard - VNI
+defaults write com.apple.HIToolbox AppleEnabledInputSources -array-add '{"Bundle ID"="com.apple.inputmethod.VietnameseIM";"Input Mode"="com.apple.inputmethod.VietnameseVNI";InputSourceKind="Input Mode";}'
+# Finnish Keyboard - Default
+defaults write com.apple.HIToolbox AppleEnabledInputSources -array-add '{InputSourceKind="Keyboard Layout";"KeyboardLayout ID"=17;"KeyboardLayout Name"=Finnish;}'
 
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+
+# Keyboard Shortcuts - Apple Symbolic Hot Keys
+# Input Sources - Select the previous input source
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add "60" "{enabled=1;value={parameters=(32,49,393216);type=standard;};}"
+
+# Show Spotlight search
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add "64" "{enabled=1;value={parameters=(65535,49,1703936);type=standard;};}"
 
 ###############################################################################
 # Screen                                                                      #
@@ -170,6 +211,16 @@ sudo systemsetup -settimezone "Europe/Helsinki" > /dev/null
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Change Screen Saver to Google Feature Photos
+defaults -currentHost write com.apple.screensaver moduleDict -dict "moduleName" "Google Featured Photos" \
+"path" "${HOME}/Library/Screen Savers/Google Featured Photos.saver" "type" "0"
+
+# Show clock in Screen Saver
+defaults -currentHost write com.apple.screensaver showClock -int 1
+
+# Screen Saver starts at 10 minitues (600ms)
+defaults -currentHost write com.apple.screensaver idleTime -int 600
 
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
@@ -302,9 +353,6 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	OpenWith -bool true \
 	Privileges -bool true
 
-# Auto hide menu bar
-#defaults write NSGlobalDomain _HIHideMenuBar -bool true
-
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
@@ -312,8 +360,8 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
-# Set the icon size of Dock items to 36 pixels
-defaults write com.apple.dock tilesize -int 36
+# Set the icon size of Dock items to 48 pixels
+defaults write com.apple.dock tilesize -int 48
 
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "scale"
@@ -606,11 +654,35 @@ defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 ###############################################################################
-# Date & Time                                                                 #
+# Status and Menu Bar                                                         #
 ###############################################################################
 
 # Custom DateFormat
 defaults write com.apple.menuextra.clock DateFormat "EEE MMM d  H:mm"
+
+# Hide & Show items in status bar
+# Hide Siri
+defaults write com.apple.systemuiserver "NSStatusItem Visible Siri" -int 0
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.TimeMachine" -int 1
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.airport" -int 1
+#defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.appleuser" -int 1 --> always visible
+#defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.battery" -int 1 --> always visible
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -int 1
+#defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.clock" -int 1 --> always visible
+defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.textinput" -int 1
+#defaults delete com.apple.systemuiserver menuExtras
+#defaults write com.apple.systemuiserver menuExtras -array \
+#"/System/Library/CoreServices/Menu Extras/Clock.menu"\
+#"/System/Library/CoreServices/Menu Extras/Battery.menu"\
+#"/System/Library/CoreServices/Menu Extras/AirPort.menu"\
+#"/System/Library/CoreServices/Menu Extras/TimeMachine.menu"\
+#"/System/Library/CoreServices/Menu Extras/User.menu"\
+#"/System/Library/CoreServices/Menu Extras/Bluetooth.menu"\
+#"/System/Library/CoreServices/Menu Extras/TextInput.menu"
+defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/CoreServices/Menu Extras/AirPort.menu"
+defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
+defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
+defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/CoreServices/Menu Extras/TextInput.menu"
 
 ###############################################################################
 # Mac App Store                                                               #
@@ -678,7 +750,6 @@ for app in "Activity Monitor" \
 	"iCal"; do
 	killall "${app}" &> /dev/null
 done
-echo "Done. Note that some of these changes require a logout/restart to take effect."
 
 
 
