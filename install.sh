@@ -48,7 +48,7 @@ check_system (){
         echo
     else
         # if the dotfiles folder is mine
-        if [ -f "$DOTFILE_ROOT/.thuongleit" ]; then
+        if [ $(cd "$DOTFILE_ROOT"; git remote show origin | grep "thuongleit/.dotfiles.git") ]; then
             echo "Updating your dotfiles repository..."
             cd "$DOTFILE_ROOT"
             git pull origin master

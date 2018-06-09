@@ -116,6 +116,8 @@ cask 'android-sdk'
 cask 'caskroom/versions/java8'
 cask 'skype'
 cask 'dropbox'
+cask 'teamviewer'
+cask 'intellij-idea-ce'
 
 # Quicklook
 #cask 'qlcolorcode'

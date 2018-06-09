@@ -9,6 +9,11 @@
     <keyboard-shortcut first-keystroke="alt f12" />
     <keyboard-shortcut first-keystroke="meta 8" />
   </action>
+  <action id="Android.HotswapChanges">
+    <keyboard-shortcut first-keystroke="meta f10" />
+    <keyboard-shortcut first-keystroke="ctrl meta r" />
+    <keyboard-shortcut first-keystroke="alt r" />
+  </action>
   <action id="ChooseRunConfiguration" />
   <action id="CleanGradleProject">
     <keyboard-shortcut first-keystroke="alt c" />
