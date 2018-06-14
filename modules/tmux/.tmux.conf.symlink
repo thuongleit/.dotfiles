@@ -1,0 +1,231 @@
+############################################################################
+# GLOBAL CONFIGURATION
+############################################################################
+# use both prefix 'C-b' and 'C-a'
+#unbind C-b
+set -g prefix2 C-a
+bind-key C-a send-prefix -2
+
+# reload config file
+bind r \
+    source-file ~/.tmux.conf \;\
+    display "Config reloaded"
+
+# clear both screen and history
+bind -n C-l send-keys C-l \; run 'sleep 0.1' \; clear-history
+
+# to limit the scrollback buffer to 10000 lines (history boost):
+set -g history-limit 10000
+
+# shorten command delay - No delay for escape key press
+set -sg escape-time 1
+# increase repeat timeout --> longer repeat key
+set -sg repeat-time 600
+set -s focus-events on
+
+# slightly longer pane indicators display time
+set -g display-panes-time 800
+# slightly longer status messages display time
+set -g display-time 1000
+
+# Enable UTF-8
+setw -q -g utf8 on
+
+# Activity monitoring
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Rather than constraining window size to the maximum size of any client
+# connected to the *session*, constrain window size to the maximum size of any
+# client connected to *that window*. Much more reasonable.
+setw -g aggressive-resize on
+
+############################################################################
+# WINDOWN AND PANEL
+############################################################################
+# rename window to reflect current program
+setw -g automatic-rename on
+# Disable window renaming (e.g. when SSH'ing)
+#set -g allow-rename off
+
+# start indexing window by 1 (instead of 0 - easier to count)
+set -g base-index 1
+
+# start indexing pane by 1
+set -g pane-base-index 1
+
+# renumber windows when a window is closed
+set -g renumber-windows on
+
+# split panes using h and v, make sure they open in the same path
+bind -n C-t split-window -h -c "#{pane_current_path}"
+bind v split-window -v -c "#{pane_current_path}"
+
+unbind '"'
+unbind %
+
+# kill window by C-w
+bind -n C-w killw
+
+# kill session by C-q
+bind -n C-q kill-session
+
+# new window by C-n
+#bind -n C-n neww
+
+unbind p
+bind [ previous-window
+unbind n
+bind ] next-window
+
+# switch panes using VI keybinding
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -L
+bind h select-pane -R
+
+# resieze panes using VI keybinding
+bind -r J resize-pane -D 5
+bind -r K resize-pane -U 5
+bind -r H resize-pane -L 5
+bind -r L resize-pane -R 5
+
+# open full screen panel
+bind f resize-pane -Z
+
+# break-pane into window
+bind-key Enter break-pane
+
+# open new windows in the current path
+bind n new-window -c "#{pane_current_path}"
+
+# present a menu of URLs to open from the visible pane. sweet.
+bind-key u capture-pane \;\
+    save-buffer /tmp/tmux-buffer \;\
+    split-window -l 10 "urlview /tmp/tmux-buffer"
+
+############################################################################
+# MOUSE MODE
+############################################################################
+# Enable mouse mode (tmux 2.1 and above - clickable windows, panes, resizable panes)
+setw -g mouse on
+
+# Toggle mose on
+bind m \
+    set -g mouse on \;\
+    display 'Mouse: ON'
+
+# Toggle mose off
+bind M \
+    set -g mouse off \;\
+    display 'Mouse: OFF'
+
+# Sane scrolling
+set -ga terminal-overrides 'xterm*:smcup@:rmcup@'
+
+############################################################################
+# COPY, PASTE AND VIM SUPPORT
+############################################################################
+# basic settings
+setw -g xterm-keys on # for vim
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
+
+# Use vim keybindings in copy mode
+# set -g status-keys vi
+
+# enter copy-mode and Vim friendly configuration
+bind c copy-mode
+unbind [
+bind b list-buffers # list paste buffers
+bind p paste-buffer # paste
+bind P choose-buffer # choose which buffer to paste from
+
+# vim keybindings for copy-paste
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+unbind -T copy-mode-vi y
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+# Update default binding of `Enter` to also use copy-pipe
+unbind -T copy-mode-vi Enter
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+# Bind Escape to cancel and exit copy mode
+unbind -T copy-mode-vi Escape
+bind-key -T copy-mode-vi Escape send-keys -X cancel
+# Movement
+bind-key -T copy-mode-vi Space send-keys -X halfpage-down
+bind-key -T copy-mode-vi Bspace send-keys -X halfpage-up
+
+# fix pbcopy/pbpaste
+#if 'command -v reattach-to-user-namespace >/dev/null' \
+#    'set -gq @osx-pasteboard true'
+
+#if 'tmux show -gv @osx-clipboard' \
+#    'set -g default-command "reattach-to-user-namespace -l $SHELL"'
+
+############################################################################
+# APPEARANCE AND STATUS BAR
+############################################################################
+### Common ###
+set -g default-terminal "screen-256color" #"xterm-256color" # "screen-256color"
+
+# Titles (window number, program name, active (or not)
+set -g set-titles on
+set -g set-titles-string '#T (#(whoami)) #S❊#I❏#P✰'      #'#h ❐ #S ● #I #W #T #h'
+
+### Window ###
+setw -g window-status-format "#[fg=white]#[bg=blue]#I#[bg=blue]#[fg=white] #W "
+setw -g window-status-current-format "#[bg=brightmagenta]#[fg=white,bold]*#I #W ☛ #(cd #{pane_current_path};pwd) [#(cd #{pane_current_path};git rev-parse --abbrev-ref HEAD)]"
+#setw -g window-status-content-attr bold,blink,reverse
+
+### Status bar ###
+# active window title colors
+set -g status-fg white
+set -g status-bg blue
+set -g status-interval 5        # redraw status line every 5 seconds
+set -g status-left-length 30
+set -g status-left ''
+set -g status-right-length 80
+set -g status-right '#S✿  %a %h-%d %H:%M'
+
+
+
+######################### END OF CONFIGURATION #########################
+###
+### More options to try ###
+###
+## Common ##
+#setw -g mode-bg black
+
+## Panel ##
+#set -g pane-border-fg black
+#set -g pane-active-border-fg blue
+# pane number display
+#set-option -g display-panes-active-colour colour33 #blue
+#set-option -g display-panes-colour colour166 #orange
+
+# Windows status
+#setw -g window-status-current-format "#[bg=brightmagenta]#[fg=white] *#I #[fg=white,bold]#[bg=cyan] [#W] "
+
+## Status bar ##
+#set -g status-left '#[fg=magenta]» #[fg=blue,bold]#T#[default]'
+#set -g status-right '♪ #(exec amixer get Master | egrep -o "[0-9]+%" | egrep -o "[0-9]*") | ♥#(acpi | cut -d ',' -f 2) | %a %m-%d %H:%M'
+#set -g status-right '[fg=cyan]»» #[fg=blue,bold]###S #[fg=magenta]%R %m-%d#(acpi | cut -d ',' -f 2)'
+#set -g status-right "#{?pane_synchronized, #[bg=blue]SYNCHRONIZED#[default],} #S (#(uptime | awk -F'load averages:' '{ print $2 }' | awk '{ print $2 }'))"
+# Make the window list appear at the left-hand side instead of at the center.
+#set -g status-justify left #(it is default)
+#set-option -g status-position top   # postion of the status bar
+#set -g status-left '#[fg=colour235,bg=colour252,bold] ❐ #S #[fg=colour252,bg=colour238,nobold]⮀#[fg=colour245,bg=colour238,bold] #(whoami) #[fg=colour238,bg=colour234,nobold]⮀'
+#set -g window-status-format "#[fg=white,bg=colour234] #I #W "
+#set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=colour25,bg=colour39,noreverse,bold] #I ⮁ #W #[fg=colour39,bg=colour234,nobold]⮀"
+#set -g status-right "#(wemux status_users)"
+
+## Clock ##
+#set-window-option -g clock-mode-colour green
+
+## Message status ##
+#set -g message-fg white
+#set -g message-bg black
+#set -g message-attr bright
+
+## Bell ##
+#set-window-option -g window-status-bell-style fg=colour235,bg=colour160 #base02, red

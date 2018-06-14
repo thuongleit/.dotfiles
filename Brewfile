@@ -58,9 +58,10 @@ brew 'youtube-dl'
 brew 'tig'
 brew 'gradle'
 brew 'tmux'
-brew 'midnight-commander'
+#brew 'midnight-commander'
 brew 'dep' #Go dependency management tool
 brew 'dockutil'
+brew 'reattach-to-user-namespace'
 
 # Development
 #brew 'php'
