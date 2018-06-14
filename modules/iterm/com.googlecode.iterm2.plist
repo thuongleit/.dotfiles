@@ -574,13 +574,9 @@
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
-	<true/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 0</string>
+	<integer>1</integer>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Apps/config/tools</string>
-	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
+	<string>/Users/thuong/.dotfiles/modules/iterm</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -617,12 +613,8 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>637 33 445 77 0 0 1440 900 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 382 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>427 452 1018 447 0 0 1440 900 </string>
+	<string>212 349 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -884,7 +876,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>cd $dotfiles/modules/others;./make_workspace.sh</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1250,29 +1242,18 @@
 			<string>/Users/thuong</string>
 		</dict>
 	</array>
-	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
-	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>25CFE5B4-E25D-4D23-B0DF-0BE0F4295868</string>
-	<key>NoSyncLastTipTime</key>
-	<real>507204394.20020503</real>
+	<string>D942EB0C-38E2-4CC9-A896-33FD2F8D988A</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
-	<true/>
+	<integer>1</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>505126077.184282</real>
-	<key>NoSyncTipsToNotShow</key>
-	<array>
-		<string>000</string>
-		<string>0000</string>
-		<string>000</string>
-		<string>0000</string>
-	</array>
+	<real>547564575.10462403</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenBookmark</key>
@@ -1315,7 +1296,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/thuong/Apps/config/tools</string>
+	<string>/Users/thuong/.dotfiles/modules/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -1327,11 +1308,9 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=63</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=91</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
-	<key>SULastCheckTime</key>
-	<date>2017-09-25T13:07:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -1347,8 +1326,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
-	<key>moveToApplicationsFolderAlertSuppress</key>
-	<true/>
+	<string>3.1.6</string>
 </dict>
 </plist>
