@@ -32,8 +32,8 @@ set -g display-time 1000
 setw -q -g utf8 on
 
 # Activity monitoring
-setw -g monitor-activity on
-set -g visual-activity on
+setw -g monitor-activity off
+set -g visual-activity off
 
 # Rather than constraining window size to the maximum size of any client
 # connected to the *session*, constrain window size to the maximum size of any
@@ -57,21 +57,18 @@ set -g pane-base-index 1
 # renumber windows when a window is closed
 set -g renumber-windows on
 
-# split panes using h and v, make sure they open in the same path
-bind -n C-t split-window -h -c "#{pane_current_path}"
-bind v split-window -v -c "#{pane_current_path}"
+# split panes using - and |, make sure they open in the same path
+bind - split-window -h -c "#{pane_current_path}"
+bind | split-window -v -c "#{pane_current_path}"
 
 unbind '"'
 unbind %
 
 # kill window by C-w
-bind -n C-w killw
+bind C-w killw
 
 # kill session by C-q
-bind -n C-q kill-session
-
-# new window by C-n
-#bind -n C-n neww
+bind C-q kill-session
 
 unbind p
 bind [ previous-window
@@ -174,7 +171,7 @@ set -g set-titles-string '#T (#(whoami)) #S❊#I❏#P✰'      #'#h ❐ #S ● #
 
 ### Window ###
 setw -g window-status-format "#[fg=white]#[bg=blue]#I#[bg=blue]#[fg=white] #W "
-setw -g window-status-current-format "#[bg=brightmagenta]#[fg=white,bold]*#I #W ☛ #(cd #{pane_current_path};pwd) [#(cd #{pane_current_path};git rev-parse --abbrev-ref HEAD)]"
+setw -g window-status-current-format "#[bg=brightmagenta]#[fg=white,bold]*#I #W ☛ #(cd #{pane_current_path};pwd) [#(cd #{pane_current_path};git rev-parse --abbrev-ref HEAD)]#F"
 #setw -g window-status-content-attr bold,blink,reverse
 
 ### Status bar ###
