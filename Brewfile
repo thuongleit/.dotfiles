@@ -24,6 +24,9 @@ brew 'findutils'
 # Install more recent versions of some macOS tools
 brew 'grep'
 
+# Install autojump
+brew 'autojump'
+
 # Install Binaries
 brew 'awscli'
 brew 'git'
