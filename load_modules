@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# Set the modules you want to install in the system
-INSTALL_MODULES=(macos zsh brew git go java android vim)

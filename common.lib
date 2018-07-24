@@ -22,5 +22,9 @@ is_admin() {
     id -Gn $1 | grep -q -w admin
 }
 
+is_macos() {
+    test "$(uname -s)" = "Darwin"
+}
+
 # JAVA_HOME PATH for java8
 JAVA8_HOME=/Library/Java/JavaVirtualMachines/"$(cd /Library/Java/JavaVirtualMachines; ls | grep jdk1.8)"/Contents/Home

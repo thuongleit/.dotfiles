@@ -1,6 +1,6 @@
 #!/bin/sh
 source $dotfiles/common.lib
-source $dotfiles/modules/android/path.zsh
+source $dotfiles/plugins/android/path.zsh
 
 ANDROID_STUDIO_VERSION="3.1"
 
@@ -15,7 +15,7 @@ android_studio_plugins_path="$HOME/Library/Application Support/AndroidStudio${AN
 copy_android_studio_preferences() {
    # Install Android Studio custom settings
    info "Copying Android Studio Preferences..."
-   local android_studio_custom="$dotfiles/modules/android/AndroidStudioSettings"
+   local android_studio_custom="$dotfiles/plugins/android/AndroidStudioSettings"
 
    if [ ! -d ${android_studio_preferences_path} ]; then
        mkdir $android_studio_preferences_path
@@ -36,7 +36,7 @@ copy_android_studio_preferences() {
 copy_android_studio_plugins() {
     # Install Android Studio plugins
     info "Installing Android Studio Plugins..."
-    local android_studio_custom="$dotfiles/modules/android/AndroidStudioPlugins"
+    local android_studio_custom="$dotfiles/plugins/android/AndroidStudioPlugins"
 
     if [ ! -d "${android_studio_plugins_path}" ]; then
 	mkdir "${android_studio_plugins_path}"
@@ -62,7 +62,7 @@ install() {
     do 
         info "Installing ${package}..."
         sdkmanager "${package}" --sdk_root="${ANDROID_HOME}"
-    done < $dotfiles/modules/android/sdk_packages.txt
+    done < $dotfiles/plugins/android/sdk_packages.txt
 
     copy_android_studio_preferences
     copy_android_studio_plugins

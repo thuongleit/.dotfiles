@@ -576,7 +576,9 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<integer>1</integer>
 	<key>NSNavLastRootDirectory</key>
-	<string>/Users/thuong/.dotfiles/modules/iterm</string>
+	<string>~/Downloads</string>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -613,11 +615,17 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>0 33 1440 599 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>212 349 796 473 0 0 1440 900 </string>
+	<string>338 348 918 512 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 900 </string>
+	<string>0 448 570 452 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
+	<string>0 0 1440 900 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>0 0 717 900 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
@@ -876,7 +884,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>cd $dotfiles/modules/others;./make_workspace.sh</string>
+			<string>cd $dotfiles/plugins/others;./make_workspace.sh</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1175,7 +1183,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Inconsolata-Regular 11</string>
+			<string>FiraCode-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -1296,7 +1304,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/thuong/.dotfiles/modules/iterm</string>
+	<string>/Users/thuong/.dotfiles/plugins/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>

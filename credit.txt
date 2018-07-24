@@ -1,0 +1,3 @@
+https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/
+http://sourabhbajaj.com/mac-setup/Homebrew/Cask.html
+

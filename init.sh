@@ -1,15 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
-# Setting up in HOME folder
+# Setting up in HOME directory
 cd ~
 DOTFILE_ROOT="$(pwd -P)/.dotfiles"
 
-#set -e
-export DOTFILE_ROOT="$DOTFILE_ROOT"
+export $DOTFILE_ROOT
 
-echo "Setting up your Mac"
+# active global functions when executing the script
+source $DOTFILE_ROOT/common.lib
 
-check_system (){
+check_system() {
     # Check Homebrew and install it if need
     # if whoami is admin
     if [ $(is_admin "$(whoami)") ]; then
@@ -132,6 +132,23 @@ link_file () {
     fi
 }
 
+install() {
+    check_system
+    install_dotfiles
+
+    local loading_plugins=$(< $DOTFILE_ROOT/loading_plugins)
+}
+
+update() {
+    local loading_plugins=$(< $DOTFILE_ROOT/loading_plugins)
+
+    info "Run updating scripts from plugins..."
+    find ./plugins -name update.sh | while read updater; do sh
+}
+
+uninstall() {
+}
+
 install_dotfiles (){
     info "Installing dotfiles..."
 
@@ -146,17 +163,13 @@ install_dotfiles (){
            link_file "$src" "$dst"
         done
 
-        # Run install scripts of all modules
-        echo "Run installation scripts from modules..."
-        find ./modules -name install.sh | while read installer ; do sh -c "${installer}" ; done
+        # Run install scripts of all plugins
+        echo "Run installation scripts from plugins..."
+        find ./plugins -name install.sh | while read installer ; do sh -c "${installer}" ; done
     fi
 }
 
-# active global functions when executing the script
-source $DOTFILE_ROOT/common.lib
 
-check_system
-install_dotfiles
 
 # Change shell to zsh if need
 if [ "$SHELL" != "$(which zsh)" ]; then

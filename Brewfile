@@ -27,6 +27,9 @@ brew 'grep'
 # Install autojump
 brew 'autojump'
 
+# pandoc to convert from markdown to pdf,doc, html
+brew 'pandoc'
+
 # Install Binaries
 brew 'awscli'
 brew 'git'
