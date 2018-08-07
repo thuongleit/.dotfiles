@@ -591,4 +591,4 @@ set wildmenu
 "   - Use :b lets you autocomplete any open buffer
 "
 set list
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+set listchars=eol:¬,tab:>~,trail:~,extends:>,precedes:<
