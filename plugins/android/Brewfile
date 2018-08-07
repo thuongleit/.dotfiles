@@ -1,0 +1,7 @@
+cask_args appdir: '/Applications'
+
+brew 'gradle'
+
+cask 'android-studio'
+cask 'android-sdk'
+cask 'caskroom/versions/java8'

@@ -6,7 +6,9 @@ set -e
 cd ~ || exit 1
 
 DOTFILE_GITHUB_REPO="https://github.com/thuongleit/.dotfiles.git"
-DOTFILE_ROOT="$(pwd -P)/.dotfiles"
+DOTFILES_ROOT="$(pwd -P)/.dotfiles"
+export DOTFILES_ROOT
+export DOTFILES_PLUGIN="$DOTFILES_ROOT/plugins"
 
 info () {
     printf '\r  [ \033[00;34m->\033[0m ] %s\n' "$1"
@@ -52,11 +54,11 @@ help() {
 
 clone_dotfiles_repo() {
     cd ~ | exit 1
-    git clone "$DOTFILE_GITHUB_REPO" "$DOTFILE_ROOT" >/dev/null 2>&1
-    success "Cloned $DOTFILE_GITHUB_REPO into $DOTFILE_ROOT"
+    git clone "$DOTFILE_GITHUB_REPO" "$DOTFILES_ROOT" >/dev/null 2>&1
+    success "Cloned $DOTFILE_GITHUB_REPO into $DOTFILES_ROOT"
 }
 update_dotfiles_repo() {
-    cd "$DOTFILE_ROOT" || exit 1
+    cd "$DOTFILES_ROOT" || exit 1
     git pull origin master >/dev/null 2>&1
     success "dotfiles repo is up-to-date."
 }
@@ -84,11 +86,11 @@ check_system() {
     fi
 
     # Check there is a cloned of dotfile repository?
-    if [ ! -d "$DOTFILE_ROOT" ]; then
+    if [ ! -d "$DOTFILES_ROOT" ]; then
         clone_dotfiles_repo
     else
         # if the dotfiles folder is mine
-        cd "$DOTFILE_ROOT"; git remote show origin | grep "thuongleit/.dotfiles.git" >/dev/null
+        cd "$DOTFILES_ROOT"; git remote show origin | grep "thuongleit/.dotfiles.git" >/dev/null
         local repo_exists=$?
         if [ $repo_exists -eq 0 ]; then
             update_dotfiles_repo
@@ -197,7 +199,7 @@ install_plugin() {
         return 1
     fi
 
-    local plugin_path="$DOTFILE_ROOT/plugins/$1"
+    local plugin_path="$DOTFILES_ROOT/plugins/$1"
 
     if [ ! -d "$plugin_path" ]; then
         fail "Plugin $1 does not exist."
@@ -224,7 +226,7 @@ update_plugin() {
         return 1
     fi
 
-    local plugin_path="$DOTFILE_ROOT/plugins/$1"
+    local plugin_path="$DOTFILES_ROOT/plugins/$1"
 
     if [ ! -d "$plugin_path" ]; then
         fail "Plugin $1 does not exist."
@@ -251,7 +253,7 @@ uninstall_plugin() {
         return 1
     fi
 
-    local plugin_path="$DOTFILE_ROOT/plugins/$1"
+    local plugin_path="$DOTFILES_ROOT/plugins/$1"
 
     if [ ! -d "$plugin_path" ]; then
         fail "Plugin $1 does not exist."
@@ -280,7 +282,7 @@ is_success_command=false
 if [ $# -eq 0 ] || [ "$1" = "help" ]; then
     help
 else 
-    loading_plugins=$(< "$DOTFILE_ROOT"/loading_plugins)
+    loading_plugins=$(< "$DOTFILES_ROOT"/loading_plugins)
 
     overwrite_all=false backup_all=false skip_all=false
     if [ "$1" = "install" ]; then
