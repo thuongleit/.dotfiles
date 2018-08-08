@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo "Customizing macOS Dock..."
 dockutil --no-restart --remove all
 dockutil --no-restart --add "/Applications/Utilities/Activity Monitor.app"
 dockutil --no-restart --add "/Applications/iTunes.app"
@@ -11,6 +12,6 @@ dockutil --no-restart --add "/Applications/iTerm.app"
 dockutil --no-restart --add "/Applications/Google Chrome.app"
 dockutil --no-restart --add "/Applications/Android Studio.app"
 dockutil --no-restart --add "/Applications/Xcode.app"
-dockutil --add "~/Downloads" --view grid --display folder --before Trash
-
-#killall Dock
+dockutil --add "$HOME/Downloads" --view grid --display folder --before Trash
+echo "Customized macOS Dock."
+killall Dock

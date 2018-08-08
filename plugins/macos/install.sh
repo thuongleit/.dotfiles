@@ -1,18 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
-source $dotfiles/common.lib
+macos_plugin_path="$DOTFILES_PLUGIN/macos"
 
-info "Customizing your macOS..."
-
-info "Customizing Dock..."
-. $dotfiles/modules/macos/dock.sh
-success "Customized Dock"
-
+sh -c "$macos_plugin_path/dock.sh"
 sleep 1
-
-info "Customizing macos settings..."
-. $dotfiles/modules/macos/preferences.sh
-
-echo "Done. Note that some of these changes require a logout/restart to take effect."
-
-success "Finished customzing macOS"
+sh -c "$macos_plugin_path/preferences.sh"
+echo "Finished customzing macOS."
