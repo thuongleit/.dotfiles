@@ -43,9 +43,9 @@ help() {
     echo
     echo Commands:
     echo
-    echo install $'\t\t' installs the given plugin \(or preconfigured plugins if no plugins provides\)
-    echo uninstall $'\t\t' uninstalls the given plugin \(or preconfigured plugins if no plugins provides\)
-    echo upgrade $'\t\t' upgrades the given plugin \(or preconfigured plugins if no plugins provides\)
+    echo \[install\] $'\t\t' installs the given plugin \(or preconfigured plugins if no plugins provides\)
+    echo \[uninstall\] $'\t\t' uninstalls the given plugin \(or preconfigured plugins if no plugins provides\)
+    echo \[upgrade\] $'\t\t' upgrades the given plugin \(or preconfigured plugins if no plugins provides\)
 
     echo
     echo See also \"loading_plugins\" file to check/configure preconfigured plugins.
@@ -273,19 +273,32 @@ uninstall_plugin() {
     fi
 }
 
+update_homebrew() {
+    info "Updating apps and dependencies..."
+
+    brew update
+    brew doctor
+
+    if ! brew bundle check; then
+        brew bundle install
+    fi
+
+    success "Apps and dependencies is up-to-date."
+}
+
 if ! is_macos; then
     fail "Sorry, we only support macOS at the moment."
     exit 1
 fi
 
 is_success_command=false
-if [ $# -eq 0 ] || [ "$1" = "help" ]; then
+if [ "$1" = "help" ]; then
     help
 else 
     loading_plugins=$(< "$DOTFILES_ROOT"/loading_plugins)
 
     overwrite_all=false backup_all=false skip_all=false
-    if [ "$1" = "install" ]; then
+    if [ $# -eq 0 ] || [ "$1" = "install" ]; then
         is_success_command=true
         # check our system first to see whether dependencies have been installed or not
         check_system
@@ -306,6 +319,7 @@ else
         # info "Changing default shell..."
         # change_shell "zsh"
         # success "Default shell changed."
+        update_homebrew
     elif [ "$1" = "update" ]; then
         is_success_command=true
 
@@ -321,6 +335,8 @@ else
                 is_success_command=false
             fi
         fi
+
+        update_homebrew 
     elif [ "$1" = "uninstall" ]; then
         is_success_command=true
         if [ -z "$2" ]; then
