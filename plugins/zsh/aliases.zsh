@@ -1,1 +1,1 @@
-alias s=less
+alias s=bat

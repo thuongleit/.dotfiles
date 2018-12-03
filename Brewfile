@@ -13,43 +13,44 @@ brew 'zsh'
 brew 'zsh-completions'
 
 # Install GNU core utilities (those that come with macOS are outdated)
-brew 'coreutils'
+#brew 'coreutils'
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew 'findutils'
+#brew 'findutils'
 
 # Install Bash 4
 #brew 'bash'
 
 # Install more recent versions of some macOS tools
-brew 'grep'
+#brew 'grep'
 
 # Install autojump
 brew 'autojump'
+brew 'zsh-autosuggestions'
 
 # pandoc to convert from markdown to pdf,doc, html
-brew 'pandoc'
+#brew 'pandoc'
 
 # Install Binaries
-brew 'awscli'
+#brew 'awscli'
 brew 'git'
 #brew 'hub'
-#brew 'tree'
-brew 'mackup'
+brew 'tree'
+#brew 'mackup'
 #brew 'mas'
 #brew 'trash'
 #brew 'ack'
 #brew 'coreutils'
 brew 'go'
 #brew 'grc'
-brew 'imagemagick'
+#brew 'imagemagick'
 #brew 'jp2a'
-#brew 'jq'
+brew 'jq'
 #brew 'libcaca', args: ['with-imlib2']
 #brew 'libgit2'
-#brew 'openssl'
+brew 'openssl'
 #brew 'node'
-brew 'readline'
+#brew 'readline'
 #brew 'postgresql'
 #brew 'puma/puma/puma-dev'
 #brew 'ruby-build'
@@ -65,9 +66,11 @@ brew 'tig'
 brew 'gradle'
 brew 'tmux'
 #brew 'midnight-commander'
-brew 'dep' #Go dependency management tool
-brew 'dockutil'
+#brew 'dep' #Go dependency management tool
+#brew 'dockutil'
 brew 'reattach-to-user-namespace'
+brew 'bat'
+brew 'autojump'
 
 # Development
 #brew 'php'
@@ -82,11 +85,11 @@ cask 'alfred'
 #cask 'eid-be'
 #cask 'eid-be-viewer'
 #cask 'firefox'
-cask 'google-backup-and-sync'
+#cask 'google-backup-and-sync'
 cask 'google-chrome'
 cask 'google-featured-photos'
 #cask 'gpgtools'
-cask 'grammarly'
+#cask 'grammarly'
 #cask 'insomnia'
 cask 'iterm2'
 cask 'java'
@@ -104,7 +107,7 @@ cask 'java'
 #cask 'vagrant'
 #cask 'virtualbox'
 #cask 'virtualbox-extension-pack'
-#cask 'vlc'
+cask 'vlc'
 #cask 'zoomus'
 cask '1password'
 #cask 'adium'
@@ -115,7 +118,7 @@ cask '1password'
 #cask 'seashore'
 #cask 'slack'
 #cask 'steam'
-cask 'noti' #Receive Android notifications on your MAC
+#cask 'noti' #Receive Android notifications on your MAC
 #cask 'transmission'
 #cask 'tunnelbear'
 cask 'android-studio'
@@ -124,7 +127,8 @@ cask 'caskroom/versions/java8'
 cask 'skype'
 cask 'dropbox'
 cask 'teamviewer'
-cask 'intellij-idea-ce'
+cask 'flux'
+#cask 'intellij-idea-ce'
 
 # Quicklook
 #cask 'qlcolorcode'
@@ -141,8 +145,8 @@ cask 'intellij-idea-ce'
 cask 'font-inconsolata'
 
 # Install Mac App Store apps
-mas 'Magnet', id: 441258766
-mas 'Xcode', id: 497799835
+#mas 'Magnet', id: 441258766
+#mas 'Xcode', id: 497799835
 #mas '1Password', id: 443987910
 #mas 'Byword', id: 420212497
 #mas 'Deckset', id: 847496013

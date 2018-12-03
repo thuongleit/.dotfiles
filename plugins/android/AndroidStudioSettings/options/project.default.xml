@@ -13,7 +13,7 @@
       </component>
       <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" default="true" assert-keyword="false" jdk-15="false" />
       <component name="PropertiesComponent">
-        <property name="android.sdk.path" value="/Users/Shared/android-sdk" />
+        <property name="android.sdk.path" value="/Users/thuong/Library/Android/sdk" />
         <property name="settings.editor.selected.configurable" value="preferences.keymap" />
         <property name="settings.editor.splitter.proportion" value="0.23240116" />
       </component>

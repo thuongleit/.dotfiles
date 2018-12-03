@@ -47,5 +47,6 @@ zle -N down-line-or-beginning-search
 export LC_ALL=en_US.UTF-8
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+setopt auto_cd #Changing directories without cd
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

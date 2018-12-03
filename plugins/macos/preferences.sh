@@ -42,7 +42,7 @@ defaults write com.apple.universalaccess reduceTransparency -bool true
 # 0.929412 0.870588 0.792157  : Brown
 # 0.847059 0.847059 0.862745  : Graphite
 # Put your values
-defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745"
+#defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745"
 #defaults delete NSGlobalDomain AppleHighlightColor
 
 # Set Appearance (For Buttons, Menu, and Windows) to Graphite
@@ -440,11 +440,11 @@ sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (
 # 10: Put display to sleep
 # 11: Launchpad
 # 12: Notification Center
-# Top left screen corner → Start screen saver
-defaults write com.apple.dock wvous-tl-corner -int 5
+# Top left screen corner → Put display to sleep
+defaults write com.apple.dock wvous-tl-corner -int 10
 defaults write com.apple.dock wvous-tl-modifier -int 0
-# Top right screen corner → Put display to sleep
-defaults write com.apple.dock wvous-tr-corner -int 10
+# Top right screen corner → Start screen saver
+defaults write com.apple.dock wvous-tr-corner -int 5
 defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Launchpad
 defaults write com.apple.dock wvous-bl-corner -int 11

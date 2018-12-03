@@ -1,7 +1,7 @@
-# Checked: Load preferences from a custom folder or URL --> uses dotfiles/modules/iterm 
+# Checked: Load preferences from a custom folder or URL --> uses dotfiles/plugins/iterm 
 defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -int 1
-defaults write com.googlecode.iterm2 "NSNavLastRootDirectory" "$DOTFILE_ROOT/modules/iterm"
-defaults write com.googlecode.iterm2 "PrefsCustomFolder" "$DOTFILE_ROOT/modules/iterm"
+defaults write com.googlecode.iterm2 "NSNavLastRootDirectory" "$DOTFILES_PLUGIN/iterm"
+defaults write com.googlecode.iterm2 "PrefsCustomFolder" "$DOTFILES_PLUGIN/iterm"
 
 # Checked: Save changes to folder when iTerms2 quits
 defaults write com.googlecode.iterm2 "NoSyncNeverRemindPrefsChangesLostForFile" -int 1

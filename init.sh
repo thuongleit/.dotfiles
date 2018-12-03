@@ -186,8 +186,9 @@ make_symlinks() {
 
 change_shell() {
     local current_shell_path=
-    current_shell_path="$(command -v "$1")"
+    current_shell_path="$(command -v zsh)"
     if [ "$SHELL" != "$current_shell_path" ]; then
+        sudo sh -c "echo $(which zsh) >> /etc/shells"
         chsh -s "$current_shell_path"
         success "Changed shell to $1."
     fi
@@ -317,7 +318,7 @@ else
 
         # Change shell to zsh if need
         # info "Changing default shell..."
-        # change_shell "zsh"
+        change_shell
         # success "Default shell changed."
         update_homebrew
     elif [ "$1" = "update" ]; then

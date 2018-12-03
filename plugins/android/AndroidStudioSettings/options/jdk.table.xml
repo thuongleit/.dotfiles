@@ -3,7 +3,7 @@
     <jdk version="2">
       <name value="Android API 9 Platform" />
       <type value="Android SDK" />
-      <homePath value="/Users/Shared/android-sdk" />
+      <homePath value="/Users/thuong/Library/Android/sdk" />
       <roots>
         <annotationsPath>
           <root type="composite">
@@ -27,7 +27,7 @@
     <jdk version="2">
       <name value="Android API 10 Platform" />
       <type value="Android SDK" />
-      <homePath value="/Users/Shared/android-sdk" />
+      <homePath value="/Users/thuong/Library/Android/sdk" />
       <roots>
         <annotationsPath>
           <root type="composite">
@@ -51,7 +51,7 @@
     <jdk version="2">
       <name value="Android API 16 Platform" />
       <type value="Android SDK" />
-      <homePath value="/Users/Shared/android-sdk" />
+      <homePath value="/Users/thuong/Library/Android/sdk" />
       <roots>
         <annotationsPath>
           <root type="composite">
@@ -73,7 +73,7 @@
     <jdk version="2">
       <name value="Android API 17 Platform" />
       <type value="Android SDK" />
-      <homePath value="/Users/Shared/android-sdk" />
+      <homePath value="/Users/thuong/Library/Android/sdk" />
       <roots>
         <annotationsPath>
           <root type="composite">
@@ -95,7 +95,7 @@
     <jdk version="2">
       <name value="Android API 18 Platform" />
       <type value="Android SDK" />
-      <homePath value="/Users/Shared/android-sdk" />
+      <homePath value="/Users/thuong/Library/Android/sdk" />
       <roots>
         <annotationsPath>
           <root type="composite">
@@ -139,7 +139,7 @@
     <jdk version="2">
       <name value="Android API 22 Platform" />
       <type value="Android SDK" />
-      <homePath value="/Users/Shared/android-sdk" />
+      <homePath value="/Users/thuong/Library/Android/sdk" />
       <roots>
         <annotationsPath>
           <root type="composite">
@@ -161,7 +161,7 @@
     <jdk version="2">
       <name value="Android API 23 Platform" />
       <type value="Android SDK" />
-      <homePath value="/Users/Shared/android-sdk" />
+      <homePath value="/Users/thuong/Library/Android/sdk" />
       <roots>
         <annotationsPath>
           <root type="composite">
@@ -183,7 +183,7 @@
     <jdk version="2">
       <name value="Android API 24 Platform" />
       <type value="Android SDK" />
-      <homePath value="/Users/Shared/android-sdk" />
+      <homePath value="/Users/thuong/Library/Android/sdk" />
       <roots>
         <annotationsPath>
           <root type="composite">
@@ -206,7 +206,7 @@
       <name value="Android API 25 Platform" />
       <type value="Android SDK" />
       <version value="java version &quot;1.8.0_112-release&quot;" />
-      <homePath value="/Users/Shared/android-sdk" />
+      <homePath value="/Users/thuong/Library/Android/sdk" />
       <roots>
         <annotationsPath>
           <root type="composite">
@@ -295,7 +295,7 @@
       <name value="Android API 26 Platform" />
       <type value="Android SDK" />
       <version value="java version &quot;1.8.0_112-release&quot;" />
-      <homePath value="/Users/Shared/android-sdk" />
+      <homePath value="/Users/thuong/Library/Android/sdk" />
       <roots>
         <annotationsPath>
           <root type="composite">
@@ -320,7 +320,7 @@
       <name value="Android API 27 Platform" />
       <type value="Android SDK" />
       <version value="java version &quot;1.8.0_112-release&quot;" />
-      <homePath value="/Users/Shared/android-sdk" />
+      <homePath value="/Users/thuong/Library/Android/sdk" />
       <roots>
         <annotationsPath>
           <root type="composite">
