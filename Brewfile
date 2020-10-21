@@ -4,7 +4,7 @@ cask_args appdir: '/Applications'
 tap "homebrew/core"
 tap "homebrew/bundle"
 tap "caskroom/cask"
-tap 'caskroom/fonts'
+# tap 'caskroom/fonts'
 # Uncomment if want to use beta version of apps
 #tap caskroom/versions
 
@@ -41,11 +41,11 @@ brew 'tree'
 #brew 'trash'
 #brew 'ack'
 #brew 'coreutils'
-brew 'go'
+# brew 'go'
 #brew 'grc'
 #brew 'imagemagick'
 #brew 'jp2a'
-brew 'jq'
+# brew 'jq'
 #brew 'libcaca', args: ['with-imlib2']
 #brew 'libgit2'
 brew 'openssl'
@@ -64,7 +64,7 @@ brew 'unrar'
 brew 'youtube-dl'
 brew 'tig'
 brew 'gradle'
-brew 'tmux'
+# brew 'tmux'
 #brew 'midnight-commander'
 #brew 'dep' #Go dependency management tool
 #brew 'dockutil'
