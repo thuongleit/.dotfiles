@@ -19,10 +19,9 @@ export GO_PATH="$HOME/go_sdk"
 export PATH=$PATH:$GO_PATH/bin
 
 # Java paths
-# JAVA_HOME PATH for java8
-JAVA8_HOME=/Library/Java/JavaVirtualMachines/"$(cd /Library/Java/JavaVirtualMachines || return; echo *jdk1.8*)"/Contents/Home
+# JAVA8_HOME=/Library/Java/JavaVirtualMachines/"$(cd /Library/Java/JavaVirtualMachines || return; echo *jdk1.8*)"/Contents/Home
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # Latex path
 export LATEXT_PATH="/Library/TeX/Root/bin/x86_64-darwin"
 export PATH=$PATH:$LATEXT_PATH
-# export PATH="/usr/local/opt/openjdk/bin:$PATH"
