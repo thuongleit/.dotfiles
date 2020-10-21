@@ -79,7 +79,7 @@ brew 'autojump'
 
 # Apps
 #cask 'aerial'
-cask 'alfred'
+# cask 'alfred'
 #cask 'caffeine'
 #cask 'docker'
 #cask 'eid-be'
@@ -127,7 +127,7 @@ cask 'caskroom/versions/java8'
 cask 'skype'
 cask 'dropbox'
 cask 'teamviewer'
-cask 'flux'
+# cask 'flux'
 #cask 'intellij-idea-ce'
 
 # Quicklook
@@ -142,7 +142,7 @@ cask 'flux'
 #cask 'font-source-code-pro'
 #cask 'font-source-sans-pro'
 #cask 'font-source-serif-pro'
-cask 'font-inconsolata'
+#cask 'font-inconsolata'
 
 # Install Mac App Store apps
 #mas 'Magnet', id: 441258766
