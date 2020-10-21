@@ -1,6 +1,1 @@
-BashSupport
 IdeaVIM
-mobi.hsz.idea.gitignore
-org.jetbrains.kotlin
-pl.charmas.parcelablegenerator
-ro.redeul.google.go
