@@ -8,7 +8,7 @@ android_studio_preferences_path="$HOME/Library/Application Support/Google/Androi
 
 # Install Android Studio custom settings
 echo "Copying Android Studio Preferences..."
-local config_path="$android_dotfile_path/AndroidStudioSettings"
+config_path="$android_dotfile_path/AndroidStudioSettings"
 
 if [ ! -d "${android_studio_preferences_path}" ]; then
    mkdir "$android_studio_preferences_path"
