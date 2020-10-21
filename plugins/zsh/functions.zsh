@@ -1,3 +1,4 @@
+# Functions
 # intellegently extract archives based on extension. 
 function extract {  
    
@@ -80,6 +81,16 @@ function extract {
             ;;
          esac
    fi
+}
+# Functions
+# Download png and save it to a file
+function dl {
+  curl $1 --out $2
+}
+# Functions
+# Make a folder and move cursor to this folder
+function mkgo {
+  mkdir $1 && cd $1
 }
 
 # Make a directory and cd into it
