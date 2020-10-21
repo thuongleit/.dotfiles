@@ -24,10 +24,10 @@ new_workspace () {
 	# tmux send-keys "cd $dotfiles/modules/others;./trackmac.py" Enter   #track my working time
 	# tmux select-pane -t 3
     # tmux clock-mode            # show clock
-	tmux select-pane -t 1
+	tmux select-pane -t 0
     tmux send-keys "cd $work" Enter #go to my workplace
 
-	tmux selectp -t 1
+	tmux selectp -t 0
 	tmux attach -t0
 }
 
