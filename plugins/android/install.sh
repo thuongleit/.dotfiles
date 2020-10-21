@@ -7,7 +7,6 @@ android_dotfile_path="$DOTFILES_ROOT/plugins/android"
 android_studio_preferences_path="$HOME/Library/Application Support/Google/AndroidStudio${ANDROID_STUDIO_VERSION}"
 
 # Install Android Studio custom settings
-echo "Copying Android Studio Preferences..."
 config_path="$android_dotfile_path/AndroidStudioSettings"
 
 if [ ! -d "${android_studio_preferences_path}" ]; then
@@ -23,6 +22,3 @@ fi
 # done
 
 cp -R "$config_path"/* "$android_studio_preferences_path"
-echo "Copied Android Studio Preferences."
-
-echo "Installed and customized Android Studio $ANDROID_STUDIO_VERSION"  

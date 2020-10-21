@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+# set -e
 
 # Setting up in HOME directory
 cd ~ || exit 1
@@ -117,7 +117,7 @@ link_file () {
             if [ "$currentSrc" == "$src" ]; then
                 skip=true
             else
-                user "File already exists: $dst ($(basename "$src")), what do you want to do?\\n\
+                ask "File already exists: $dst ($(basename "$src")), what do you want to do?\\n\
                     [s]kip, [S]kip all, [o]verwite, '[O]verwrite all, [b]ack up, [B]ackup all?"
 
                 read -r -n 1 action
@@ -153,16 +153,16 @@ link_file () {
 
         if [ "$overwrite" == "true" ]; then
             rm -rf "$dst"
-            success "removed $dst"
+            info "removed $dst"
         fi
 
         if [ "$backup" == "true" ]; then
             mv "$dst" "${dst}.backup"
-            success "moved $dst to ${dst}.backup"
+            info "moved $dst to ${dst}.backup"
         fi
 
         if [ "$skip" == "true" ]; then
-            success "skipped $src"
+            info "skipped $src"
         fi
     fi
 
@@ -206,6 +206,7 @@ install_plugin() {
         fail "Plugin $1 does not exist."
         return 1
     else
+        info "Install plugin $1..."
         make_symlinks "$plugin_path"
 
         local executing_script_path="${plugin_path}/install.sh"
@@ -217,7 +218,7 @@ install_plugin() {
             sh -c "$executing_script_path"
         fi
 
-        success "Installed plugin $1."
+        success "Installed"
     fi
 }
 
@@ -233,6 +234,7 @@ update_plugin() {
         fail "Plugin $1 does not exist."
         return 1
     else
+        info "Update plugin $1..."
         make_symlinks "$plugin_path"
 
         local executing_script_path="${plugin_path}/update.sh"
@@ -244,7 +246,7 @@ update_plugin() {
             sh -c "$executing_script_path"
         fi
 
-        success "Updated plugin $1."
+        success "Updated"
     fi
 }
 
@@ -260,6 +262,7 @@ uninstall_plugin() {
         fail "Plugin $1 does not exist."
         return 1
     else
+        info "Uninstall plugin $1..."
         # make_symlinks "$plugin_path"
         local executing_script_path="${plugin_path}/uninstall.sh"
         if [ -f "$executing_script_path" ]; then
@@ -270,7 +273,7 @@ uninstall_plugin() {
             sh -c "$executing_script_path"
         fi
 
-        success "Uninstalled plugin $1."
+        success "Uninstalled"
     fi
 }
 
@@ -319,7 +322,7 @@ else
 
         # Change shell to zsh if need
         # info "Changing default shell..."
-        change_shell
+        # change_shell
         # success "Default shell changed."
         update_homebrew
     elif [ "$1" = "update" ]; then
@@ -360,5 +363,5 @@ fi
 
 if [ "$is_success_command" = "true" ]; then
     echo "Done. Note that some of these changes require a logout/restart to take effect."
-    echo "---------- YAY! Enjoy your new workspace ----------"
+    echo "---------- YAY! Enjoy your new workspace!!! ----------"
 fi
