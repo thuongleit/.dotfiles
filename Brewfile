@@ -22,7 +22,7 @@ brew 'zsh-completions'
 #brew 'bash'
 
 # Install more recent versions of some macOS tools
-#brew 'grep'
+brew 'grep'
 
 # Install autojump
 brew 'autojump'
