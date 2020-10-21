@@ -1,6 +1,6 @@
 #!/bin/bash
+echo "Customizing macOS..."
 
-macos_plugin_path="$DOTFILES_PLUGIN/macos"
+sh -c "$DOTFILES_PLUGIN/macos/preferences.sh"
 
-sh -c "$macos_plugin_path/preferences.sh"
-echo "Finished customzing macOS."
+echo "Customized macOS."
