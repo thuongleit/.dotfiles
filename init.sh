@@ -278,6 +278,7 @@ update_homebrew() {
     info "Updating apps and dependencies..."
 
     brew update
+    brew upgrade
     brew doctor
 
     if ! brew bundle check; then
@@ -350,6 +351,8 @@ else
                 is_success_command=false
             fi
         fi
+
+        update_homebrew 
     else
         help
     fi
@@ -357,5 +360,5 @@ fi
 
 if [ "$is_success_command" = "true" ]; then
     echo "Done. Note that some of these changes require a logout/restart to take effect."
-    echo "---------- YAY! Enjoy your Mac ----------"
+    echo "---------- YAY! Enjoy your new workspace ----------"
 fi
