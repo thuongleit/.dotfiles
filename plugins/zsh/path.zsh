@@ -9,7 +9,6 @@ export dotfiles=~/.dotfiles
 # Android paths
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export ANDROID_STUDIO_VERSION="3.2"
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Flutter paths
