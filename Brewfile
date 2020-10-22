@@ -3,7 +3,7 @@ cask_args appdir: '/Applications'
 # Taps
 tap "homebrew/core"
 tap "homebrew/bundle"
-tap "caskroom/cask"
+tap "homebrew/cask"
 # tap 'caskroom/fonts'
 # Uncomment if want to use beta version of apps
 #tap caskroom/versions
