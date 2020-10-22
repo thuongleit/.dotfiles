@@ -26,7 +26,8 @@ alias gr='git reset'
 alias gd='git diff'
 alias gf='git fetch'
 alias gfa='git fetch --all --prune'
-alias gfo='git fetch origin'\alias gl='git pull'
+alias gfo='git fetch origin'
+alias gl='git pull'
 alias gl='git pull'
 alias gm='git merge'
 alias gp='git push'
@@ -48,7 +49,8 @@ alias -g ......='cd ../../../../..'
 alias -g .......='cd ../../../../../..'
 alias -g ........='cd ../../../../../../..'
 
-alias google='web_search google'                  # Note: websearch function is loaded in function file, see above
+# Note: websearch function is loaded in function file, see above
+alias google='web_search google'
 alias ddg='web_search ddg'
 alias github='web_search github'
 alias wiki='web_search ddg \!w'
@@ -62,4 +64,4 @@ alias -g ll='ls -l'
 alias -g la='ls -al'
 alias -g li='ls -ali'
 
-alias see=bat
+alias s=bat
