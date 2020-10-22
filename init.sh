@@ -283,6 +283,7 @@ update_homebrew() {
     brew update
     brew upgrade
     brew doctor
+    brew cleanup
 
     if ! brew bundle check; then
         brew bundle install
