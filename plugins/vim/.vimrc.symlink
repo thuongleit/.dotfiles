@@ -557,7 +557,7 @@ nnoremap E $
 
 " close file shortcuts
 nnoremap ZZ :wq<CR>
-nnoremap XX :q!<CR>
+nnoremap QQ :q!<CR>
 
 " search with shortcut
 nnoremap ss /
