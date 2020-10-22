@@ -1,5 +1,9 @@
 " Common settings
-set hls
+"" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
 " Key mapping
 imap jj <Esc>
@@ -13,7 +17,8 @@ nmap QQ :q!<CR>
 nmap ge :action GotoNextError<CR>
 nmap gE :action GotoPreviousError<CR>
 nmap gr :action Run<CR>
-nmap gR :action Debug<CR>
+nmap gd :action Debug<CR>
+nmap gR :action Flutter.Toolbar.RestartAction<CR>
 nmap gs :action ShowErrorDescription<CR>
 nmap U :action FindUsages<CR>
 imap uu <up>
@@ -26,3 +31,7 @@ nmap cs ci(
 nmap cS ci{
 nmap ca ci'
 nmap cA ci"
+
+"" Split
+noremap <C-a>h :split<CR>
+noremap <C-a>v :vsplit<CR>
