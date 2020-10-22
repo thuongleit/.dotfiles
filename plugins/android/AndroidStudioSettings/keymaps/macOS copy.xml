@@ -1,0 +1,9 @@
+<keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="MoveLineDown">
+    <keyboard-shortcut first-keystroke="shift meta j" />
+  </action>
+  <action id="MoveLineUp">
+    <keyboard-shortcut first-keystroke="shift meta k" />
+  </action>
+  <action id="Vcs.Push" />
+</keymap>
