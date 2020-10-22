@@ -1,0 +1,23 @@
+" Common settings
+set hls
+
+" Key mapping
+imap jj <Esc>
+imap jk <Esc>A
+nmap ss /
+nmap SS ?
+nmap B ^
+nmap E $
+nmap ZZ :wq<CR>
+nmap XX :q!<CR>
+nmap ge :action GotoNextError<CR>
+nmap gE :action GotoPreviousError<CR>
+nmap gr :action Run<CR>
+nmap gR :action Debug<CR>
+nmap gs :action ShowErrorDescription<CR>
+imap uu <up>
+imap dd <down>
+nmap ds di(
+nmap da di'
+nmap cs ci(
+nmap ca ci'
