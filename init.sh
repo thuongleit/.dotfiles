@@ -115,9 +115,9 @@ link_file () {
             currentSrc="$(readlink "$dst")"
 
             if [ "$currentSrc" == "$src" ]; then
-                skip=true
+                skip=false
             else
-                ask "File already exists: $dst ($(basename "$src")), what do you want to do?\\n\
+                ask "File already exists: $dst ($(basename "$src")), what do you want to do?\
                     [s]kip, [S]kip all, [o]verwite, '[O]verwrite all, [b]ack up, [B]ackup all?"
 
                 read -r -n 1 action
@@ -167,7 +167,7 @@ link_file () {
     fi
 
     if [ "$skip" != "true" ]; then
-        ln -s "$src" "$dst"
+        ln -s "$src" "$dst" >/dev/null 2>&1
         success "linked $1 to $2"
     fi
 }
