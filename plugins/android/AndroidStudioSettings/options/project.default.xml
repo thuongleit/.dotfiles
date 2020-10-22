@@ -1,0 +1,10 @@
+<application>
+  <component name="ProjectManager">
+    <defaultProject>
+      <component name="PropertiesComponent">
+        <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+        <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+      </component>
+    </defaultProject>
+  </component>
+</application>

@@ -2,12 +2,9 @@
 
 ANDROID_STUDIO_VERSION=4.1
 # shellcheck source=/dev/null
-android_dotfile_path="$DOTFILES_ROOT/plugins/android"
+android_studio_preconfig_path="$dotfiles/plugins/android/AndroidStudioSettings"
 
 android_studio_preferences_path="$HOME/Library/Application Support/Google/AndroidStudio${ANDROID_STUDIO_VERSION}"
-
-# Install Android Studio custom settings
-config_path="$android_dotfile_path/AndroidStudioSettings"
 
 if [ ! -d "${android_studio_preferences_path}" ]; then
    mkdir "$android_studio_preferences_path"
@@ -21,4 +18,4 @@ fi
 #     sed -i '' "s|\$ANDROID_HOME|${ANDROID_HOME}|g" "$config_path/options/$file"
 # done
 
-cp -R "$config_path"/* "$android_studio_preferences_path"
+cp -R -i "$android_studio_preconfig_path"/* "$android_studio_preferences_path"

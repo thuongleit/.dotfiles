@@ -1,0 +1,13 @@
+<application>
+  <component name="NotRoamableUiSettings">
+    <option name="fontFace" value="Fira Code Retina" />
+    <option name="ideAAType" value="Greyscale" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="AndroidInitConfigurator.V1" value="true" />
+    <property name="AndroidInitConfigurator.V3" value="true" />
+    <property name="AndroidInitConfigurator.V5" value="true" />
+    <property name="fileTypeChangedCounter" value="1" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+  </component>
+</application>
