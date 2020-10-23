@@ -1,45 +1,37 @@
-" Map leader to Ctrl-a
-" let mapleader=<C-a>
+" My IdeaVim settings
+" Map leader to , key
+" let mapleader=','
 
-"" Common settings
+"" Get shared key mapping from local vim
+if filereadable(expand("~/.vimrc.keymaps"))
+  source ~/.vimrc.keymaps
+endif
+
+"" Basic Setup
+"" Enable hidden buffers
+set hidden
+
 "" Searching
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 
-"" Idea specific settings
-set ideajoin"
+"" Ideavim specific settings
+set ideajoin
 
-"" Key mapping
-imap jj <Esc>
-imap jk <Esc>A
-nmap ss /
-nmap SS ?
-nmap B ^
-nmap E $
-nmap ZZ :wq<CR>
-nmap QQ :q!<CR>
-nmap ge :action GotoNextError<CR>
-nmap gE :action GotoPreviousError<CR>
-nmap ss :action ShowErrorDescription<CR>
-map <C-a>r :action Run<CR>
-map <C-a>d :action Debug<CR>
-map <C-a>S :action Stop<CR>
-map <C-a>s :action Flutter.Toolbar.ReloadAction<CR>
-map <C-a>R :action Flutter.Toolbar.RestartAction<CR>
-nmap U :action FindUsages<CR>
-imap uu <up>
-imap dd <down>
-nmap ds di(
-nmap dS di{
-nmap da di'
-nmap dA di"
-nmap cs ci(
-nmap cS ci{
-nmap ca ci'
-nmap cA ci"
-
-"" Split
-map <C-a>h :split<CR>
-map <C-a>v :vsplit<CR>
+"" Jetbrain IDE specific settings
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+nnoremap gs :action ShowErrorDescription<CR>
+nnoremap gd :action QuickJavaDoc<cr>
+nnoremap gu :action FindUsages<CR>
+nnoremap ff :action Dart.DartStyle<CR>
+nnoremap <C-s> :action Dart.DartStyle<CR>:action SaveAll<CR>
+nnoremap <leader>r :action Run<CR>
+nnoremap <leader>d :action Debug<CR>
+nnoremap <leader>S :action Stop<cr>
+nnoremap <leader>s :action Flutter.Toolbar.ReloadAction<cr>
+nnoremap <leader>R :action Flutter.Toolbar.RestartAction<CR>
+" imap uu <up>
+" imap dd <down>

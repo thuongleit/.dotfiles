@@ -1,0 +1,116 @@
+" My vim custom keymap
+" Sharing between vim and ideavim
+
+"" Map leader to ,
+let mapleader=','
+
+"*****************************************************************************
+"" Key Mapping Settings
+"*****************************************************************************
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" jj is escape
+inoremap jj <esc>
+
+" jk is adding to the end of line
+inoremap jk <Esc>A
+
+" move to beginning/end of line
+nnoremap B 0
+nnoremap E $
+
+" close file shortcuts
+nnoremap QQ :q!<CR>
+
+" search with shortcut
+nnoremap ss /
+nnoremap SS ?
+"
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
+
+" Some specific key-mapping for quick code
+nnoremap ds di(
+nnoremap dS di{
+nnoremap da di'
+nnoremap dA di"
+nnoremap cs ci(
+nnoremap cS ci{
+nnoremap ca ci'
+nnoremap cA ci"
+
+" Quick delete line by pressing D
+nnoremap D dd
+
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+"" Split
+noremap <Leader>h :<C-u>split<CR>
+noremap <Leader>v :<C-u>vsplit<CR>
+
+"" Vmap for maintain Visual Mode after shifting > and <
+vmap < <gv
+vmap > >gv
+
+"" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+"" Buffer nav
+noremap <leader>p :bp<CR>
+noremap <leader>P :bn<CR>
+
+"" List buffer
+noremap <leader>l :ls<CR>
+
+"" Close buffer
+noremap <leader>c :bd<CR>
+
+"" Close all panels, except current one
+noremap <leader>x :only<CR>
+
+"" Yank and move cussor to the end of visual block
+vnoremap y ygvoO<Esc>
+
+"" move to last change
+nnoremap gl `.
+
+"" Clean search (highlight)
+nnoremap <silent> <leader><space> :noh<cr>
+
+"" Switching windows
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+
+"" In insert or command mode, move normally by using Ctrl
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+cnoremap <C-h> <Left>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-l> <Right>
+
+"*****************************************************************************
+"" Abbreviations
+"*****************************************************************************
+"" no one is really happy until you have this shortcuts
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
