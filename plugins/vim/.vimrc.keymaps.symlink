@@ -39,10 +39,12 @@ nnoremap ds di(
 nnoremap dS di{
 nnoremap da di'
 nnoremap dA di"
+nnoremap dt dit
 nnoremap cs ci(
 nnoremap cS ci{
 nnoremap ca ci'
 nnoremap cA ci"
+nnoremap ct cit
 
 " Quick delete line by pressing D
 nnoremap D dd
