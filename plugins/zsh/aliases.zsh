@@ -65,3 +65,4 @@ alias -g la='ls -al'
 alias -g li='ls -ali'
 
 alias v=bat
+alias e=vi
