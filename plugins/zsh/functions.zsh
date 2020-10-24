@@ -82,22 +82,6 @@ function extract {
          esac
    fi
 }
-# Functions
-# Download png and save it to a file
-function dl {
-  curl $1 --out $2
-}
-# Functions
-# Make a folder and move cursor to this folder
-function mkgo {
-  mkdir $1 && cd $1
-}
-
-# Make a directory and cd into it
-function take {
-	mkdir -p $1
-	cd $1
-}
 
 # web_search from terminal
 function web_search() {
@@ -158,7 +142,7 @@ function open_command() {
 }
 
 # Show dots while waiting for tab-completion
-expand-or-complete-with-dots() {
+function expand-or-complete-with-dots() {
 	# toggle line-wrapping off and back on again
 	[[ -n "$terminfo[rmam]" && -n "$terminfo[smam]" ]] && echoti rmam
 	print -Pn "%{%F{red}......%f%}"
@@ -167,5 +151,34 @@ expand-or-complete-with-dots() {
 	zle expand-or-complete
 	zle redisplay
 }
+
+# Utilities functions
+# Download png and save it to a file
+function dl {
+  curl $1 --out $2
+}
+# Make a folder and move cursor to this folder
+function mkgo {
+  mkdir $1 && cd $1
+}
+
+# Make a directory and cd into it
+function take {
+	mkdir -p $1
+	cd $1
+}
+function create_and_edit_new_file() {
+    touch "$1"
+    vi "$1"
+}
+
+function backup_file() {
+    mv "$1" "$1.bak"
+}
+
+function move_files_to_trash(){
+    mv -fv "$@" ~/.Trash/
+}
+
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots

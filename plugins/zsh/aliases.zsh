@@ -28,7 +28,6 @@ alias gf='git fetch'
 alias gfa='git fetch --all --prune'
 alias gfo='git fetch origin'
 alias gl='git pull'
-alias gl='git pull'
 alias gm='git merge'
 alias gp='git push'
 alias gss='git status -s'
@@ -37,7 +36,6 @@ alias gst='git status'
 # OS aliases
 alias active_env='source $HOME/.zshrc'
 alias work='cd $work'
-alias t='tig'
 alias showfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hidefiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
@@ -59,6 +57,7 @@ alias youtube='web_search ddg \!yt'
 alias map='web_search ddg \!m'
 alias image='web_search ddg \!i'
 
+# Shortcuts
 alias -g l='ls'
 alias -g ll='ls -l'
 alias -g la='ls -al'
@@ -66,3 +65,7 @@ alias -g li='ls -ali'
 
 alias v=bat
 alias e=vi
+alias t=tig
+alias bk=backup_file
+alias rr=move_files_to_trash
+alias cre=create_and_edit_new_file
