@@ -179,6 +179,3 @@ function backup_file() {
 function move_files_to_trash(){
     mv -fv "$@" ~/.Trash/
 }
-
-zle -N expand-or-complete-with-dots
-bindkey "^I" expand-or-complete-with-dots
