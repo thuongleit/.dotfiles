@@ -65,7 +65,7 @@ alias -g li='ls -ali'
 
 alias v=bat
 alias e=vi
-alias s=ask
+alias s=ack
 alias t=tig
 alias bk=backup_file
 alias rr=move_files_to_trash
