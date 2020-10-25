@@ -12,4 +12,4 @@ bindkey "^N" down-line-or-beginning-search # Down
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
 
-bindkey '^ ' autosuggest-accept
+bindkey "^ " autosuggest-accept

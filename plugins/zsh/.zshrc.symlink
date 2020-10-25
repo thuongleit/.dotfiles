@@ -26,9 +26,10 @@ do
   source $file
 done
 
+# Completion
 # initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
+autoload -U promptinit && promptinit
+autoload -U compinit compdef && compinit
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
@@ -39,19 +40,8 @@ done
 unset config_files
 
 #zsh setups
+# forces applications to use the default language for output
 export LC_ALL=en_US.UTF-8
-# Completion
-autoload -U promptinit && promptinit
-autoload -U compinit compdef && compinit
-
-#autojump setup
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-#zsh-completions setup
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-#zsh-autosuggestions setup
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Remove superfluous blanks from each command line being added to the history
 # list
@@ -97,3 +87,15 @@ setopt correct
 setopt no_nomatch  
 # Disable annoying confirm
 setopt rmstarsilent
+
+#autojump setup
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+#zsh-completions setup
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+#zsh-autosuggestions setup
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+#load local bindkeys
+source $DOTFILES_PLUGIN/zsh/bindkeys.sh
