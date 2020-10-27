@@ -84,7 +84,10 @@ vnoremap y ygvoO<Esc>
 nnoremap gl `.
 
 "" Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
+nnoremap <silent> <leader><space> :noh<CR>
+
+"" Search google with selected texts
+vnoremap s y:!google <C-r>"<CR>
 
 "" Switching windows
 noremap <C-j> <C-w>j

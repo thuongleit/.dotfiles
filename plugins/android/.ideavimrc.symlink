@@ -39,3 +39,5 @@ nnoremap <leader>R :action Flutter.Toolbar.RestartAction<CR>
 nnoremap <leader>b :action ToggleLineBreakpoint<CR>
 nnoremap <leader>m :action ToggleBookmark<CR>
 nnoremap <leader>Z :action Vcs.RollbackChangedLines<CR>
+nnoremap <leader>c :close<CR>
+nnoremap <leader>x :action CloseAllUnmodifiedEditors<CR>
