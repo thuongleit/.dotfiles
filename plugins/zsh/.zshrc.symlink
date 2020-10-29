@@ -28,7 +28,6 @@ done
 
 # Completion
 # initialize autocomplete here, otherwise functions won't be loaded
-autoload -U promptinit && promptinit
 autoload -U compinit compdef && compinit
 
 # load every completion after autocomplete loads
@@ -99,3 +98,8 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #load local bindkeys
 source $DOTFILES_PLUGIN/zsh/bindkeys.sh
+
+fpath+=$HOME/.zsh/pure
+
+autoload -U promptinit; promptinit
+prompt pure

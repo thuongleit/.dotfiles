@@ -103,6 +103,17 @@ check_system() {
     success "System OK"
 }
 
+setup_zsh_prompt_theme() {
+    if [ ! -d "$HOME/.zsh/pure" ]; then
+        mkdir $HOME/.zsh
+        git clone git@github.com:sindresorhus/pure.git $HOME/.zsh/pure
+    else 
+        cd $HOME/.zsh/pure
+        git pull origin master >/dev/null 2>&1
+        cd -
+    fi
+}
+
 link_file () {
     local src=$1 dst=$2
 
@@ -326,6 +337,7 @@ else
         # change_shell
         # success "Default shell changed."
         update_homebrew
+        setup_zsh_prompt_theme 
     elif [ "$1" = "update" ]; then
         is_success_command=true
 
