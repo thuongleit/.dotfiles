@@ -171,7 +171,8 @@ set -g set-titles-string '#T (#(whoami)) #S❊#I❏#P✰'      #'#h ❐ #S ● #
 
 ### Window ###
 setw -g window-status-format "#[fg=white]#[bg=blue]#I#[bg=blue]#[fg=white] #W "
-setw -g window-status-current-format "#[bg=brightmagenta]#[fg=white,bold]*#I #W ☛ #(cd #{pane_current_path};pwd) [#(cd #{pane_current_path};git rev-parse --abbrev-ref HEAD)]#F"
+# setw -g window-status-current-format "#[bg=brightmagenta]#[fg=white,bold]*#I #W ☛ #(cd #{pane_current_path};pwd) [#(cd #{pane_current_path};git rev-parse --abbrev-ref HEAD)]#F"
+setw -g window-status-current-format "#[bg=brightmagenta]#[fg=white,bold]*#I #W ☛ #(cd #{pane_current_path};pwd)#F"
 #setw -g window-status-content-attr bold,blink,reverse
 
 ### Status bar ###
