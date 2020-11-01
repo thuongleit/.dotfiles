@@ -179,3 +179,15 @@ function backup_file() {
 function move_files_to_trash(){
     mv -fv "$@" ~/.Trash/
 }
+
+#Open a github repo in browser from terminal
+#https://gist.github.com/igrigorik/6666860
+function open_github() {
+ git remote -v | grep push
+ remote=${1:-origin}
+ echo "Using remote $remote"
+
+ URL=$(git config remote.$remote.url | sed "s/git@\(.*\):\(.*\).git/https:\/\/\1\/\2/")
+ echo "Opening $URL..."
+ open $URL
+}
