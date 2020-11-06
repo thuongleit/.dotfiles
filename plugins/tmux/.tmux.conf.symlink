@@ -132,7 +132,7 @@ setw -g mode-keys vi
 # set -g status-keys vi
 
 # enter copy-mode and Vim friendly configuration
-bind c copy-mode
+bind y copy-mode
 unbind [
 bind b list-buffers # list paste buffers
 bind p paste-buffer # paste
