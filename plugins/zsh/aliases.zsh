@@ -70,3 +70,4 @@ alias t=tig
 alias bk=backup_file
 alias rr=move_files_to_trash
 alias cre=create_and_edit_new_file
+alias f=ranger

@@ -72,6 +72,7 @@ brew 'reattach-to-user-namespace'
 brew 'bat'
 brew 'autojump'
 brew 'ffmpeg'
+brew 'ranger'
 
 # Development
 #brew 'php'
