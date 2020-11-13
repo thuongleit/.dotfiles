@@ -23,16 +23,19 @@ set ideajoin
 "" Jetbrain IDE specific settings
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
-nnoremap gs :action ShowErrorDescription<CR>
-nnoremap gd :action QuickJavaDoc<cr>
+nnoremap gs :action SelectIn<CR>
+nnoremap gd :action QuickJavaDoc<CR>
 nnoremap gu :action FindUsages<CR>
 nnoremap gf :action GotoDeclaration<CR>
 nnoremap gt :action FileStructurePopup<CR>
-nnoremap gcc :action CommentByLineComment<CR>
+nnoremap gc :action CommentByLineComment<CR>
 nnoremap <Esc><Esc> :action HideActiveWindow<CR>
 nnoremap ff :action Dart.DartStyle<CR>
 nnoremap ff :action ReformatCode<CR>
 nnoremap <C-s> :action ReformatCode<CR>:action SaveAll<CR>
+nnoremap <C-h> :action JumpToLastWindow<CR>
+nnoremap <C-j> j
+nnoremap <C-k> k
 nnoremap <leader>r :action Run<CR>
 nnoremap <leader>d :action Debug<CR>
 nnoremap <leader>S :action Stop<CR>
