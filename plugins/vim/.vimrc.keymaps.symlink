@@ -35,16 +35,16 @@ nnoremap $ <nop>
 nnoremap ^ <nop>
 
 " Some specific key-mapping for quick code
-nnoremap ds di(
-nnoremap dS di{
-nnoremap da di'
-nnoremap dA di"
-" nnoremap dt dit
-nnoremap cs ci(
-nnoremap cS ci{
-nnoremap ca ci'
-nnoremap cA ci"
-" nnoremap ct cit
+nnoremap ds di'
+nnoremap cs ci'
+nnoremap vs vi'
+nnoremap dS di"
+nnoremap cS ci"
+nnoremap vS vi"
+
+" Map quickly visual a function block
+nnoremap vm Ev%o
+nnoremap vM Ev%Vo
 
 " Quick delete line by pressing D
 nnoremap D dd
@@ -85,9 +85,6 @@ nnoremap gl `.
 
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<CR>
-
-"" Search google with selected texts
-vnoremap s y:!google <C-r>"<CR>
 
 "" Switching windows
 noremap <C-j> <C-w>j

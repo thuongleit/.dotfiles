@@ -24,23 +24,23 @@ set ideajoin
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
 nnoremap gs :action SelectIn<CR>
-nnoremap gd :action QuickJavaDoc<CR>
-nnoremap gu :action FindUsages<CR>
-nnoremap gf :action GotoDeclaration<CR>
-nnoremap gt :action FileStructurePopup<CR>
-nnoremap gc :action CommentByLineComment<CR>
-nnoremap <Esc><Esc> :action HideActiveWindow<CR>
-nnoremap ff :action Dart.DartStyle<CR>
-nnoremap ff :action ReformatCode<CR>
-nnoremap <C-s> :action ReformatCode<CR>:action SaveAll<CR>
+nnoremap U :action FindUsages<CR>
+" nnoremap <C-s> :action QuickJavaDoc<CR>
+" nnoremap <C-a> :action FileStructurePopup<CR>
+" nnoremap <C-c> :action CommentByLineComment<CR>
+nnoremap ff <Esc> :action Dart.DartStyle<CR>
+nnoremap ff <Esc> :action ReformatCode<CR>
 nnoremap <C-h> :action JumpToLastWindow<CR>
 nnoremap <C-j> j
 nnoremap <C-k> k
+nnoremap <C-l> :action GotoDeclaration<CR>
+nnoremap <C-b> :action Back<CR>
+nnoremap <C-f> :action Forward<CR>
 nnoremap <leader>r :action Run<CR>
 nnoremap <leader>d :action Debug<CR>
 nnoremap <leader>S :action Stop<CR>
 nnoremap <leader>s :action Flutter.Toolbar.ReloadAction<CR>
-nnoremap <leader>s :action android.deploy.CodeSwap<CR>
+" nnoremap <leader>s :action android.deploy.CodeSwap<CR>
 nnoremap <leader>R :action Flutter.Toolbar.RestartAction<CR>
 nnoremap <leader>R :action android.deploy.ApplyChanges<CR>
 nnoremap <leader>b :action ToggleLineBreakpoint<CR>
