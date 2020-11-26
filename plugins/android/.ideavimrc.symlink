@@ -24,12 +24,12 @@ set ideajoin
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
 nnoremap gs :action SelectIn<CR>
+nnoremap gd :action QuickJavaDoc<CR>
 nnoremap U :action FindUsages<CR>
-" nnoremap <C-s> :action QuickJavaDoc<CR>
 " nnoremap <C-a> :action FileStructurePopup<CR>
 " nnoremap <C-c> :action CommentByLineComment<CR>
 nnoremap ff <Esc> :action Dart.DartStyle<CR>
-nnoremap ff <Esc> :action ReformatCode<CR>
+" nnoremap ff <Esc> :action ReformatCode<CR>
 nnoremap <C-h> :action JumpToLastWindow<CR>
 nnoremap <C-j> j
 nnoremap <C-k> k
