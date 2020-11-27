@@ -21,30 +21,40 @@ set smartcase
 set ideajoin
 
 "" Jetbrain IDE specific settings
-nnoremap ge :action GotoNextError<CR>
-nnoremap gE :action GotoPreviousError<CR>
 nnoremap gs :action SelectIn<CR>
-nnoremap gd :action QuickJavaDoc<CR>
-nnoremap U :action FindUsages<CR>
-" nnoremap <C-a> :action FileStructurePopup<CR>
 " nnoremap <C-c> :action CommentByLineComment<CR>
-nnoremap ff <Esc> :action Dart.DartStyle<CR>
 " nnoremap ff <Esc> :action ReformatCode<CR>
 nnoremap <C-h> :action JumpToLastWindow<CR>
 nnoremap <C-j> j
 nnoremap <C-k> k
 nnoremap <C-l> :action GotoDeclaration<CR>
-nnoremap <C-b> :action Back<CR>
-nnoremap <C-f> :action Forward<CR>
+nnoremap <C-[> :action Back<CR>
+nnoremap <C-]> :action Forward<CR>
+
+nnoremap <leader>u :action FindUsages<CR>
+nnoremap <leader>e :action GotoNextError<CR>
+nnoremap <leader>E :action GotoPreviousError<CR>
+nnoremap <leader>a :action FileStructurePopup<CR>
 nnoremap <leader>r :action Run<CR>
-nnoremap <leader>d :action Debug<CR>
+nnoremap <leader>d :action QuickJavaDoc<CR>
+nnoremap <leader>D :action Debug<CR>
 nnoremap <leader>S :action Stop<CR>
 nnoremap <leader>s :action Flutter.Toolbar.ReloadAction<CR>
-" nnoremap <leader>s :action android.deploy.CodeSwap<CR>
+nnoremap <leader>s :action android.deploy.CodeSwap<CR>
 nnoremap <leader>R :action Flutter.Toolbar.RestartAction<CR>
 nnoremap <leader>R :action android.deploy.ApplyChanges<CR>
-nnoremap <leader>b :action ToggleLineBreakpoint<CR>
-nnoremap <leader>m :action ToggleBookmark<CR>
 nnoremap <leader>Z :action Vcs.RollbackChangedLines<CR>
-nnoremap <leader>c :close<CR>
-nnoremap <leader>x :action CloseAllUnmodifiedEditors<CR>
+nnoremap <leader>C :close<CR>
+nnoremap <leader>X :action CloseAllUnmodifiedEditors<CR>
+nnoremap <leader>f :action Dart.DartStyle<CR>
+nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+nnoremap <leader>m :action ExtractMethod<CR>
+nnoremap <leader>v :action IntroduceVariable<CR>
+nnoremap <leader>c :action IntroduceConstant<CR>
+nnoremap <leader>w :action Flutter.ExtractWidget<CR>
+nnoremap <leader>n :action ShowNavBar<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+"Redefine split key
+nnoremap <Leader>h :<C-u>split<CR>
+nnoremap <Leader>H :<C-u>vsplit<CR>
+
