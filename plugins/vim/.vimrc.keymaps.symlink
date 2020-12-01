@@ -43,8 +43,20 @@ nnoremap cS ci"
 nnoremap vS vi"
 
 " Map quickly visual a function block
-nnoremap vm Ev%o
+nnoremap vm Ev%eob
 nnoremap vM Ev%Vo
+
+"" Surround current word or visually selected text with double quotes
+"" https://vim.fandom.com/wiki/Simple_Macros_to_quote_and_unquote_a_word
+nnoremap qw ciw'<C-r>"'<Esc>
+nnoremap qW ciw"<C-r>""<Esc>
+vnoremap ' c'<C-r>"'<Esc>
+vnoremap " c"<C-r>""<Esc>
+vnoremap ,{ c{<C-r>"{<Esc>
+
+" Unquote
+nnoremap wq di'2hpldf'
+nnoremap wQ di"2hpldf"
 
 " Quick delete line by pressing D
 nnoremap D dd
