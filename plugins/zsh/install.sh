@@ -8,6 +8,7 @@ git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure" >/dev/null 
 
 # Fix insecure directories and files, run compaudit for list
 # https://github.com/zsh-users/zsh-completions/issues/433
-compaudit | xargs chmod g-w
+folder=/usr/local/share/zsh
+sudo chmod -R 755 $folder
 
 echo "zsh is configured."
