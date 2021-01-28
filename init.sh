@@ -90,7 +90,7 @@ check_system() {
         clone_dotfiles_repo
     else
         # if the dotfiles folder is mine
-        cd "$DOTFILES_ROOT"; git remote show origin | grep "thuongleit/.dotfiles.git" >/dev/null
+        cd "$DOTFILES_ROOT"; git remote show origin | grep "thuongleit/.dotfiles" >/dev/null
         local repo_exists=$?
         if [ $repo_exists -eq 0 ]; then
             update_dotfiles_repo
