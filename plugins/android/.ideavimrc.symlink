@@ -23,7 +23,13 @@ set ideajoin
 "" Jetbrain IDE specific settings
 nnoremap gs :action SelectIn<CR>
 nnoremap gu :action FindUsages<CR>
-nnoremap gn :action ShowNavBar<CR>
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+nnoremap gc :action VcsShowNextChangeMarker<CR>
+nnoremap gC :action VcsShowPrevChangeMarker<CR>
+nnoremap gD :action Compare.SameVersion<CR>
+nnoremap <leader>n :action ShowNavBar<CR>
+
 nnoremap <C-h> :action JumpToLastWindow<CR>
 nnoremap <C-j> j
 nnoremap <C-k> k
@@ -33,8 +39,6 @@ nnoremap <C-]> :action Forward<CR>
 nnoremap <Esc><Esc> :action HideActiveWindow<CR>
 
 nnoremap <leader>, :action FileStructurePopup<CR>
-nnoremap <leader>e :action GotoNextError<CR>
-nnoremap <leader>E :action GotoPreviousError<CR>
 nnoremap <leader>r :action Run<CR>
 " nnoremap <leader>d :action QuickJavaDoc<CR> --> use K instead
 nnoremap <leader>d :action Debug<CR>
@@ -46,13 +50,15 @@ nnoremap <leader>ar :action android.deploy.ApplyChanges<CR>
 nnoremap <leader>Z :action Vcs.RollbackChangedLines<CR>
 nnoremap <leader>C :close<CR>
 nnoremap <leader>X :action CloseAllUnmodifiedEditors<CR>
-nnoremap <leader>f :action Dart.DartStyle<CR>
 nnoremap <leader>b :action ToggleLineBreakpoint<CR>
-nnoremap <leader>m :action ExtractMethod<CR>
-nnoremap <leader>v :action IntroduceVariable<CR>
-nnoremap <leader>c :action IntroduceConstant<CR>
-nnoremap <leader>w :action Flutter.ExtractWidget<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
-"Redefine split key
+"" Redefine split key
 nnoremap <Leader>h :<C-u>split<CR>
 nnoremap <Leader>H :<C-u>vsplit<CR>
+
+"" Some useful refactor keys
+noremap <leader>f :action Dart.DartStyle<CR>
+noremap <leader>m :action ExtractMethod<CR>
+noremap <leader>v :action IntroduceVariable<CR>
+noremap <leader>c :action IntroduceConstant<CR>
+noremap <leader>w :action Flutter.ExtractWidget<CR>

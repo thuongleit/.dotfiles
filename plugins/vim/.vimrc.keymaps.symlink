@@ -16,12 +16,15 @@ nnoremap N Nzzzv
 " jj is escape
 inoremap jj <esc>
 
+" jk is adding ; at the end
+inoremap jk <C-e>;<esc>
+
 " jk is adding to the end of line
 " inoremap jk <Esc>A
 
 " move to beginning/end of line
-nnoremap B 0
-nnoremap E $
+noremap B 0
+noremap E $
 
 " close file shortcuts
 nnoremap QQ :q!<CR>
@@ -31,8 +34,8 @@ nnoremap ss /
 nnoremap SS ?
 "
 " $/^ doesn't do anything
-nnoremap $ <nop>
-nnoremap ^ <nop>
+noremap $ <nop>
+noremap ^ <nop>
 
 " Some specific key-mapping for quick code
 nnoremap ds di'
@@ -42,9 +45,12 @@ nnoremap dS di"
 nnoremap cS ci"
 nnoremap vS vi"
 
-" Map quickly visual a function block
-nnoremap vm Ev%eob
-nnoremap vM Ev%Vo
+"" Map quickly visual a function block
+nnoremap vm vawE%o
+nnoremap vM VE%o
+
+"" Quick move to the correspond closing bracket
+noremap gz E%
 
 "" Surround current word or visually selected text with double quotes
 "" https://vim.fandom.com/wiki/Simple_Macros_to_quote_and_unquote_a_word
