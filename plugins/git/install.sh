@@ -10,6 +10,6 @@ if [ -z "$(git config --global user.email)" ]; then
     git config --global user.name "$git_author_name"
     git config --global user.email "$git_author_email"
 
-    echo "Git configged."
+    echo "Git is configured."
 fi
 
