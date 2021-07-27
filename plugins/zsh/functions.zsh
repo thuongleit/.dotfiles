@@ -191,3 +191,9 @@ function open_github() {
  echo "Opening $URL..."
  open $URL
 }
+
+# this function needs brew install ghostscript 
+function compresspdf() {
+  echo 'Usage: compresspdf [input file] [output file] [screen|ebook|printer|prepress]'
+  gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="$2" "$1"
+}
