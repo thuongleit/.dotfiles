@@ -176,7 +176,7 @@ function backup_file() {
     mv "$1" "$1.bak"
 }
 
-function move_files_to_trash(){
+function to_trash(){
     mv -fv "$@" ~/.Trash/
 }
 
