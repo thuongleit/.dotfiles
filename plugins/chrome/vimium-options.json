@@ -1,0 +1,42 @@
+{
+  "settingsVersion": "1.67",
+  "exclusionRules": [
+    {
+      "pattern": "https?://drive.google.com/*",
+      "passKeys": "?jkpxercgils#uld/`"
+    },
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": "?jkpxercgils#uld/`"
+    },
+    {
+      "pattern": "https?://calendar.google.com/*",
+      "passKeys": "?jkpxercgils#uld/`"
+    },
+    {
+      "pattern": "https?://docs.google.com/*",
+      "passKeys": "?jkpxercgils#uld/`"
+    },
+    {
+      "pattern": "https?://www.youtube.com/*",
+      "passKeys": "mt"
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Insert your preferred key mappings here.\nmap R reload hard\nmap Q closeOtherTabs\nmap wq closeTabsOnLeft\nmap qw closeTabsOnRight\nmap M toggleMuteTab all\n#map gh LinkHints.activateMode action=hover\n#map gy LinkHints.activateMode action=copy-text\n\nmap ss Vomnibar.activate keyword=g\nmap sw Vomnibar.activate keyword=w\nmap sy Vomnibar.activate keyword=y\nmap sm Vomnibar.activate keyword=gm\nmap so Vomnibar.activate keyword=ox\nmap sa Vomnibar.activate keyword=a\nmap sd Vomnibar.activate keyword=d\nmap st Vomnibar.activate keyword=t\n\nmap SS Vomnibar.activateInNewTab keyword=g\nmap SW Vomnibar.activateInNewTab keyword=w\nmap SY Vomnibar.activateInNewTab keyword=y\nmap SM Vomnibar.activateInNewTab keyword=gm\nmap SO Vomnibar.activateInNewTab keyword=ox\nmap SA Vomnibar.activateInNewTab keyword=a\nmap SD Vomnibar.activateInNewTab keyword=d\nmap ST Vomnibar.activateInNewTab keyword=t",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "wiki: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ng: https://www.google.com/search?q=%s Google\ngl: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\ngm: https://www.google.com/maps?q=%s Google maps\ny: https://www.youtube.com/results?search_query=%s Youtube\nd: https://duckduckgo.com/?q=%s DuckDuckGo\na: https://www.amazon.com/s/?field-keywords=%s Amazon\nox: https://www.oxfordlearnersdictionaries.com/definition/english/%s Oxford Dictionary Learner\nt: http://translate.google.com/?source=osdd#auto|auto|%s Google Translate\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+}
