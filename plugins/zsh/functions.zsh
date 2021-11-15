@@ -212,7 +212,7 @@ function download_videos() {
   while IFS= read -r link
   do
     echo "Download video from $link"
-    youtube-dl "$link"
+    youtube-dl --write-auto-sub --convert-subs=srt --sub-lang en "$link"
   done < "$link_file"
 }
 
