@@ -204,3 +204,7 @@ function convert_video() {
     ffmpeg -i "$f" -vcodec h264 -acodec mp2 "${f%".mov"}.mp4"
   done
 }
+
+function download_blob() {
+    ffmpeg -i "$1" -codec copy downloaded_blob_file.mkv
+}
