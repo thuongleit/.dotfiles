@@ -205,6 +205,17 @@ function convert_video() {
   done
 }
 
+function download_videos() {
+  local link_file="$1"
+  echo "Link file: $link_file"
+
+  while IFS= read -r link
+  do
+    echo "Download video from $link"
+    youtube-dl "$link"
+  done < "$link_file"
+}
+
 function download_blob() {
     ffmpeg -i "$1" -codec copy downloaded_blob_file.mkv
 }
