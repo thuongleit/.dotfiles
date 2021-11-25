@@ -219,3 +219,7 @@ function download_videos() {
 function download_blob() {
     ffmpeg -i "$1" -codec copy downloaded_blob_file.mkv
 }
+
+function speed_test() {
+  curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+}
