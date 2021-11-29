@@ -223,3 +223,15 @@ function download_blob() {
 function speed_test() {
   curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
 }
+
+function write_link() {
+    local default_folder="${DROPBOX:-$(HOME)}"
+    local default_file="links.txt"
+    local link_file="$default_folder/${2:-$default_file}"
+
+    echo "Writing $1 to $link_file"
+
+    echo "$1" >> $link_file
+    echo "DONE!"
+}
+alias wl=write_link
