@@ -27,4 +27,4 @@ export LATEXT_PATH="/Library/TeX/Root/bin/x86_64-darwin"
 export PATH=$PATH:$LATEXT_PATH
 
 # Brew paths 
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
