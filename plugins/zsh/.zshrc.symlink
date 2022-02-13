@@ -88,13 +88,13 @@ setopt no_nomatch
 setopt rmstarsilent
 
 #autojump setup
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 #zsh-completions setup
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(/opt/homebrew/share/zsh-completions $fpath)
 
 #zsh-autosuggestions setup
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #load local bindkeys
 source $DOTFILES_PLUGIN/zsh/bindkeys.sh
