@@ -233,7 +233,7 @@ function speed_test() {
 }
 
 function write_link() {
-    local default_folder="${DROPBOX:-$(HOME)}"
+    local default_folder="${work:-$(HOME)}"
     local default_file="links.txt"
     local link_file="$default_folder/${2:-$default_file}"
 
