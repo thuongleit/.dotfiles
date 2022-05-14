@@ -214,6 +214,9 @@ function convert_mp3() {
 }
 
 function download_videos() {
+    # apt install python
+    # apt install yt-dlp
+    # apt install python3-brotli
   local link_file="$1"
   echo "Link file: $link_file"
 
