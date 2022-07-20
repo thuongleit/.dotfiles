@@ -24,11 +24,11 @@ set ideajoin
 
 "" Jetbrain IDE specific settings
 "" Moving 
-nnoremap <C-h> h
+" nnoremap <C-h> h
 nnoremap <C-j> j
 nnoremap <C-k> k
 nnoremap <C-l> l
-nnoremap <C-u> :action JumpToLastWindow<CR>
+nnoremap <C-h> :action JumpToLastWindow<CR>
 nnoremap <C-i> :action GotoDeclaration<CR>
 nnoremap <C-[> :action Back<CR>
 nnoremap <C-]> :action Forward<CR>
