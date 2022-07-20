@@ -214,23 +214,13 @@ function convert_mp3() {
 }
 
 function download_videos() {
-    # apt install python
-    # apt install yt-dlp
-    # apt install python3-brotli
   local link_file="$1"
   echo "Link file: $link_file"
-
-  local output_folder="output"
-  if [ ! -d $output_folder ]
-  then
-      mkdir "$output_folder"
-  fi
 
   while IFS= read -r link
   do
     echo "Download video from $link"
-    # youtube-dl --write-auto-sub --convert-subs=srt --sub-lang en "$link"
-    yt-dlp -f "bestvideo[height<=1080]+bestaudio/best" -o "$output_folder/%(title)s-%(id)s.%(ext)s" "$link"
+    youtube-dl --write-auto-sub --convert-subs=srt --sub-lang en "$link"
   done < "$link_file"
 }
 
@@ -243,7 +233,7 @@ function speed_test() {
 }
 
 function write_link() {
-    local default_folder="${work:-$(HOME)}"
+    local default_folder="${DROPBOX:-$(HOME)}"
     local default_file="links.txt"
     local link_file="$default_folder/${2:-$default_file}"
 

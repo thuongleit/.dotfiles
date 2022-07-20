@@ -115,3 +115,4 @@ unset homebrew_path
 
 autoload -U promptinit; promptinit
 prompt pure
+PATH=./bin:$PATH

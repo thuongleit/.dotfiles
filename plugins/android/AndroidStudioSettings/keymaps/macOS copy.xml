@@ -2,11 +2,18 @@
   <action id="ActivateDartAnalysisToolWindow">
     <keyboard-shortcut first-keystroke="alt 1" />
   </action>
+  <action id="ActivateFindToolWindow">
+    <keyboard-shortcut first-keystroke="alt 3" />
+  </action>
+  <action id="ActivateLogcatToolWindow">
+    <keyboard-shortcut first-keystroke="meta 8" />
+  </action>
   <action id="ActivateProjectProblemsToolWindow">
     <keyboard-shortcut first-keystroke="alt 2" />
   </action>
+  <action id="ActivateServicesToolWindow" />
   <action id="ActivateTerminalToolWindow">
-    <keyboard-shortcut first-keystroke="alt 3" />
+    <keyboard-shortcut first-keystroke="meta 3" />
   </action>
   <action id="CIDR.Lang.ImportsHierarchy">
     <keyboard-shortcut first-keystroke="ctrl meta h" />
@@ -24,11 +31,12 @@
     <keyboard-shortcut first-keystroke="meta divide" />
     <keyboard-shortcut first-keystroke="alt c" />
   </action>
+  <action id="CompareTwoFiles" />
   <action id="Debug" />
   <action id="EditSource">
     <keyboard-shortcut first-keystroke="meta down" />
     <keyboard-shortcut first-keystroke="f4" />
-    <keyboard-shortcut first-keystroke="ctrl l" />
+    <keyboard-shortcut first-keystroke="ctrl i" />
   </action>
   <action id="EditorCutLineEnd" />
   <action id="EditorDeleteLine">
@@ -37,14 +45,24 @@
   </action>
   <action id="EditorDown">
     <keyboard-shortcut first-keystroke="down" />
-    <keyboard-shortcut first-keystroke="ctrl n" />
     <keyboard-shortcut first-keystroke="ctrl j" />
+    <keyboard-shortcut first-keystroke="ctrl n" />
   </action>
   <action id="EditorDuplicate" />
+  <action id="EditorLeft">
+    <keyboard-shortcut first-keystroke="left" />
+    <keyboard-shortcut first-keystroke="ctrl b" />
+    <keyboard-shortcut first-keystroke="ctrl h" />
+  </action>
+  <action id="EditorRight">
+    <keyboard-shortcut first-keystroke="right" />
+    <keyboard-shortcut first-keystroke="ctrl l" />
+  </action>
+  <action id="EditorScrollToCenter" />
   <action id="EditorUp">
     <keyboard-shortcut first-keystroke="up" />
-    <keyboard-shortcut first-keystroke="ctrl p" />
     <keyboard-shortcut first-keystroke="ctrl k" />
+    <keyboard-shortcut first-keystroke="ctrl p" />
   </action>
   <action id="FileChooser.LightEditGotoOpenedFile">
     <keyboard-shortcut first-keystroke="ctrl meta f1" />
@@ -68,10 +86,6 @@
     <keyboard-shortcut first-keystroke="meta alt b" />
     <mouse-shortcut keystroke="meta alt button1" />
     <mouse-shortcut keystroke="Force touch" />
-  </action>
-  <action id="HideActiveWindow">
-    <keyboard-shortcut first-keystroke="shift escape" />
-    <keyboard-shortcut first-keystroke="ctrl h" />
   </action>
   <action id="HideAllWindows">
     <keyboard-shortcut first-keystroke="alt h" />
@@ -140,11 +154,15 @@
     <keyboard-shortcut first-keystroke="meta f3" />
     <keyboard-shortcut first-keystroke="shift alt b" />
   </action>
+  <action id="ShowPopupMenu">
+    <keyboard-shortcut first-keystroke="ctrl y" />
+  </action>
   <action id="SmartTypeCompletion">
     <keyboard-shortcut first-keystroke="shift meta space" />
   </action>
   <action id="Terminal.OpenInTerminal">
     <keyboard-shortcut first-keystroke="shift alt 3" />
+    <keyboard-shortcut first-keystroke="shift ctrl t" />
   </action>
   <action id="ToggleBookmark">
     <keyboard-shortcut first-keystroke="f3" />

@@ -3,9 +3,11 @@
 " let mapleader=','
 
 "" Get shared key mapping from local vim
-if filereadable(expand("~/.vimrc.keymaps"))
-  source ~/.vimrc.keymaps
-endif
+" if filereadable(expand("~/.vimrc.keymaps"))
+" FIXME: don't know why this check doesn't work
+" assume there is a keymaps file
+source ~/.vimrc.keymaps
+" endif
 
 "" Basic Setup
 "" Enable hidden buffers
@@ -21,6 +23,41 @@ set smartcase
 set ideajoin
 
 "" Jetbrain IDE specific settings
+"" Moving 
+nnoremap <C-h> h
+nnoremap <C-j> j
+nnoremap <C-k> k
+nnoremap <C-l> l
+nnoremap <C-u> :action JumpToLastWindow<CR>
+nnoremap <C-i> :action GotoDeclaration<CR>
+nnoremap <C-[> :action Back<CR>
+nnoremap <C-]> :action Forward<CR>
+nnoremap <Esc><Esc> :action HideActiveWindow<CR>
+
+"" Using leader key
+nnoremap <leader>, :action FileStructurePopup<CR>
+nnoremap <leader>r :action Run<CR>
+" nnoremap <leader>d :action QuickJavaDoc<CR> --> use K instead
+nnoremap <leader>d :action Debug<CR>
+nnoremap <leader>S :action Stop<CR>
+" nnoremap <leader>s :action Flutter.Toolbar.ReloadAction<CR>
+" nnoremap <leader>R :action Flutter.Toolbar.RestartAction<CR>
+nnoremap <leader>Z :action Vcs.RollbackChangedLines<CR>
+nnoremap X :close<CR>
+nnoremap <leader>X :action CloseAllUnmodifiedEditors<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+nnoremap <leader>f :action ReformatCode<CR>
+nnoremap <leader>c :action CleanGradleProject<CR>
+nnoremap <leader>b :action MakeGradleProject<CR>
+nnoremap <leader>B :action ToggleLineBreakpoint<CR>
+nnoremap <leader>as :action Android.SyncProject<CR>
+nnoremap <leader>ap :action Android.BuildApk<CR>
+nnoremap <leader>as :action android.deploy.CodeSwap<CR>
+nnoremap <leader>ac :action android.deploy.ApplyChanges<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+nnoremap <leader>n :action ShowNavBar<CR>
+
+"" Navigation functions
 nnoremap gs :action SelectIn<CR>
 nnoremap gu :action FindUsages<CR>
 nnoremap ge :action GotoNextError<CR>
@@ -28,37 +65,15 @@ nnoremap gE :action GotoPreviousError<CR>
 nnoremap gc :action VcsShowNextChangeMarker<CR>
 nnoremap gC :action VcsShowPrevChangeMarker<CR>
 nnoremap gD :action Compare.SameVersion<CR>
-nnoremap <leader>n :action ShowNavBar<CR>
 
-nnoremap <C-h> :action JumpToLastWindow<CR>
-nnoremap <C-j> j
-nnoremap <C-k> k
-nnoremap <C-l> :action GotoDeclaration<CR>
-nnoremap <C-[> :action Back<CR>
-nnoremap <C-]> :action Forward<CR>
-nnoremap <Esc><Esc> :action HideActiveWindow<CR>
-
-nnoremap <leader>, :action FileStructurePopup<CR>
-nnoremap <leader>r :action Run<CR>
-" nnoremap <leader>d :action QuickJavaDoc<CR> --> use K instead
-nnoremap <leader>d :action Debug<CR>
-nnoremap <leader>S :action Stop<CR>
-nnoremap <leader>s :action Flutter.Toolbar.ReloadAction<CR>
-nnoremap <leader>R :action Flutter.Toolbar.RestartAction<CR>
-nnoremap <leader>as :action android.deploy.CodeSwap<CR>
-nnoremap <leader>ar :action android.deploy.ApplyChanges<CR>
-nnoremap <leader>Z :action Vcs.RollbackChangedLines<CR>
-nnoremap <leader>C :close<CR>
-nnoremap <leader>X :action CloseAllUnmodifiedEditors<CR>
-nnoremap <leader>b :action ToggleLineBreakpoint<CR>
-nnoremap <leader>o :action OptimizeImports<CR>
 "" Redefine split key
-nnoremap <Leader>h :<C-u>split<CR>
-nnoremap <Leader>H :<C-u>vsplit<CR>
+nnoremap <leader>h :<C-u>split<CR>
+nnoremap <leader>H :<C-u>vsplit<CR>
 
 "" Some useful refactor keys
-noremap <leader>f :action Dart.DartStyle<CR>
-noremap <leader>m :action ExtractMethod<CR>
-noremap <leader>v :action IntroduceVariable<CR>
-noremap <leader>c :action IntroduceConstant<CR>
-noremap <leader>w :action Flutter.ExtractWidget<CR>
+" noremap <leader>f :action Dart.DartStyle<CR>
+"
+noremap em :action ExtractMethod<CR>
+noremap ev :action IntroduceVariable<CR>
+noremap ec :action IntroduceConstant<CR>
+" noremap <leader>w :action Flutter.ExtractWidget<CR>
