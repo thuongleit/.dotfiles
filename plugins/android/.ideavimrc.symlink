@@ -32,7 +32,7 @@ nnoremap <C-h> :action JumpToLastWindow<CR>
 nnoremap <C-i> :action GotoDeclaration<CR>
 nnoremap <C-[> :action Back<CR>
 nnoremap <C-]> :action Forward<CR>
-nnoremap <Esc><Esc> :action HideActiveWindow<CR>
+nnoremap <Esc><Esc> :action HideAllWindows<CR>
 
 "" Using leader key
 nnoremap <leader>, :action FileStructurePopup<CR>
@@ -42,8 +42,17 @@ nnoremap <leader>d :action Debug<CR>
 nnoremap <leader>S :action Stop<CR>
 " nnoremap <leader>s :action Flutter.Toolbar.ReloadAction<CR>
 " nnoremap <leader>R :action Flutter.Toolbar.RestartAction<CR>
-nnoremap <leader>Z :action Vcs.RollbackChangedLines<CR>
+nnoremap <leader>z :action Vcs.RollbackChangedLines<CR>
+nnoremap <leader>Z :action ChangesView.Revert<CR>
 nnoremap X :close<CR>
+nnoremap X :close<CR>
+nnoremap T :action ReopenClosedTab<CR>
+nnoremap qq :action CloseAllEditorsButActive<CR>
+nnoremap QQ :action CloseAllEditors<CR>
+nnoremap ww :action CloseAllUnpinnedEditors<CR>
+nnoremap tt :action PinActiveEditorTab<CR>
+nnoremap qw :action CloseAllToTheRight<CR>
+nnoremap wq :action CloseAllToTheLeft<CR>
 nnoremap <leader>X :action CloseAllUnmodifiedEditors<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
 nnoremap <leader>f :action ReformatCode<CR>
