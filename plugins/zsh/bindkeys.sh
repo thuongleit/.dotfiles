@@ -13,3 +13,6 @@ zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
 
 bindkey "^ " autosuggest-accept
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward

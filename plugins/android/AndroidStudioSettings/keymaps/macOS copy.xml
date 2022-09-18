@@ -33,6 +33,16 @@
   </action>
   <action id="CompareTwoFiles" />
   <action id="Debug" />
+  <action id="Diff.ApplyLeftSide">
+    <keyboard-shortcut first-keystroke="ctrl meta right" />
+    <keyboard-shortcut first-keystroke="meta right" />
+    <keyboard-shortcut first-keystroke="meta l" />
+  </action>
+  <action id="Diff.ApplyRightSide">
+    <keyboard-shortcut first-keystroke="ctrl meta left" />
+    <keyboard-shortcut first-keystroke="meta left" />
+    <keyboard-shortcut first-keystroke="meta j" />
+  </action>
   <action id="EditSource">
     <keyboard-shortcut first-keystroke="meta down" />
     <keyboard-shortcut first-keystroke="f4" />
@@ -44,7 +54,6 @@
   </action>
   <action id="EditorCutLineEnd" />
   <action id="EditorDeleteLine">
-    <keyboard-shortcut first-keystroke="meta back_space" />
     <keyboard-shortcut first-keystroke="meta d" />
   </action>
   <action id="EditorDown">
@@ -86,16 +95,31 @@
     <keyboard-shortcut first-keystroke="meta g" />
   </action>
   <action id="GotoDeclaration">
-    <keyboard-shortcut first-keystroke="meta b" />
     <mouse-shortcut keystroke="meta button1" />
+    <keyboard-shortcut first-keystroke="meta b" />
   </action>
   <action id="GotoImplementation">
     <keyboard-shortcut first-keystroke="meta alt b" />
     <mouse-shortcut keystroke="meta alt button1" />
     <mouse-shortcut keystroke="Force touch" />
   </action>
+  <action id="GotoTypeDeclaration">
+    <keyboard-shortcut first-keystroke="shift meta b" />
+    <keyboard-shortcut first-keystroke="shift ctrl b" />
+    <mouse-shortcut keystroke="shift meta button1" />
+    <keyboard-shortcut first-keystroke="shift ctrl i" />
+    <keyboard-shortcut first-keystroke="meta i" />
+  </action>
   <action id="HideAllWindows">
     <keyboard-shortcut first-keystroke="alt h" />
+  </action>
+  <action id="HideSideWindows">
+    <keyboard-shortcut first-keystroke="shift alt h" />
+  </action>
+  <action id="JumpToLastChange">
+    <keyboard-shortcut first-keystroke="shift meta back_space" />
+    <keyboard-shortcut first-keystroke="ctrl back_space" />
+    <keyboard-shortcut first-keystroke="meta back_space" />
   </action>
   <action id="LocalHistory.ShowHistory">
     <keyboard-shortcut first-keystroke="meta alt h" />
@@ -130,6 +154,7 @@
   </action>
   <action id="PreviousDiff">
     <keyboard-shortcut first-keystroke="shift meta n" />
+    <keyboard-shortcut first-keystroke="meta p" />
   </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="shift meta open_bracket" />
@@ -179,7 +204,7 @@
     <keyboard-shortcut first-keystroke="shift alt b" />
   </action>
   <action id="ShowPopupMenu">
-    <keyboard-shortcut first-keystroke="ctrl y" />
+    <keyboard-shortcut first-keystroke="ctrl q" />
   </action>
   <action id="SmartTypeCompletion">
     <keyboard-shortcut first-keystroke="shift meta space" />
@@ -200,6 +225,14 @@
     <keyboard-shortcut first-keystroke="ctrl alt z" />
   </action>
   <action id="TypeHierarchy" />
+  <action id="Vcs.Diff.ExcludeChangedLinesFromCommit">
+    <keyboard-shortcut first-keystroke="space" />
+    <keyboard-shortcut first-keystroke="meta b" />
+    <keyboard-shortcut first-keystroke="meta k" />
+  </action>
+  <action id="Vcs.Push">
+    <keyboard-shortcut first-keystroke="shift meta p" />
+  </action>
   <action id="android.deploy.ApplyChanges">
     <keyboard-shortcut first-keystroke="ctrl meta e" />
   </action>

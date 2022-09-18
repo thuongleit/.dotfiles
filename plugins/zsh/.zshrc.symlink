@@ -105,6 +105,8 @@ fpath=($homebrew_path/share/zsh-completions $fpath)
 #zsh-autosuggestions setup
 source $homebrew_path/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 #load local bindkeys
 source $DOTFILES_PLUGIN/zsh/bindkeys.sh
 

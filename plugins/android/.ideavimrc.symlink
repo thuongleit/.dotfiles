@@ -28,10 +28,14 @@ set ideajoin
 nnoremap <C-j> j
 nnoremap <C-k> k
 nnoremap <C-l> l
-nnoremap <C-h> :action JumpToLastWindow<CR>
+" nnoremap <C-h> h
+nnoremap <C-h> :action ActivateProjectToolWindow<CR>
 nnoremap <C-i> :action GotoDeclaration<CR>
 nnoremap <C-[> :action Back<CR>
 nnoremap <C-]> :action Forward<CR>
+nnoremap <C-1> :action SelectInProjectView<CR>
+inoremap <C-b> <Esc>Bi
+inoremap <C-1> <Esc>Ei
 nnoremap <Esc><Esc> :action HideAllWindows<CR>
 
 "" Using leader key
@@ -42,37 +46,48 @@ nnoremap <leader>d :action Debug<CR>
 nnoremap <leader>S :action Stop<CR>
 " nnoremap <leader>s :action Flutter.Toolbar.ReloadAction<CR>
 " nnoremap <leader>R :action Flutter.Toolbar.RestartAction<CR>
-nnoremap <leader>z :action Vcs.RollbackChangedLines<CR>
-nnoremap <leader>Z :action ChangesView.Revert<CR>
+nnoremap zz :action Vcs.RollbackChangedLines<CR>
+nnoremap ZZ :action ChangesView.Revert<CR>
 nnoremap X :close<CR>
-nnoremap X :close<CR>
+nnoremap <C-w> :close<CR>
 nnoremap T :action ReopenClosedTab<CR>
 nnoremap qq :action CloseAllEditorsButActive<CR>
 nnoremap QQ :action CloseAllEditors<CR>
-nnoremap ww :action CloseAllUnpinnedEditors<CR>
+" nnoremap ww :action CloseAllUnpinnedEditors<CR>
 nnoremap tt :action PinActiveEditorTab<CR>
 nnoremap qw :action CloseAllToTheRight<CR>
 nnoremap wq :action CloseAllToTheLeft<CR>
-nnoremap <leader>X :action CloseAllUnmodifiedEditors<CR>
+nnoremap mm :action CommentByLineComment<CR>
+vnoremap mm :action CommentByLineComment<CR>
+nnoremap MM :action CommentByBlockComment<CR>
+vnoremap MM :action CommentByBlockComment<CR>
+" nnoremap <leader>X :action CloseAllUnmodifiedEditors<CR>
+" nnoremap <leader>X :action CloseAllUnmodifiedEditors<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
 nnoremap <leader>f :action ReformatCode<CR>
+vnoremap <leader>f :action ReformatCode<CR>
 nnoremap <leader>c :action CleanGradleProject<CR>
 nnoremap <leader>b :action MakeGradleProject<CR>
 nnoremap <leader>B :action ToggleLineBreakpoint<CR>
-nnoremap <leader>as :action Android.SyncProject<CR>
-nnoremap <leader>ap :action Android.BuildApk<CR>
-nnoremap <leader>as :action android.deploy.CodeSwap<CR>
-nnoremap <leader>ac :action android.deploy.ApplyChanges<CR>
+" nnoremap <leader>as :action Android.SyncProject<CR>
+" nnoremap <leader>ap :action Android.BuildApk<CR>
+" nnoremap <leader>as :action android.deploy.CodeSwap<CR>
+" nnoremap <leader>ac :action android.deploy.ApplyChanges<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 nnoremap <leader>n :action ShowNavBar<CR>
+nnoremap <leader>g :action Annotate<CR>
 
 "" Navigation functions
 nnoremap gs :action SelectIn<CR>
+nnoremap <C-s> :action SelectIn<CR>
 nnoremap gu :action FindUsages<CR>
+nnoremap <C-e> :action GotoNextError<CR>
+nnoremap <C-E> :action GotoPreviousError<CR>
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
-nnoremap gc :action VcsShowNextChangeMarker<CR>
-nnoremap gC :action VcsShowPrevChangeMarker<CR>
+nnoremap <C-c> :action VcsShowNextChangeMarker<CR>
+nnoremap <C-v> :action VcsShowPrevChangeMarker<CR>
+nnoremap <leader>m :action ToggleBookmark<CR>
 nnoremap gD :action Compare.SameVersion<CR>
 
 "" Redefine split key
