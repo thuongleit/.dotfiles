@@ -41,9 +41,11 @@ noremap ^ <nop>
 nnoremap ds di'
 nnoremap cs ci'
 nnoremap vs vi'
+nnoremap ys yi'
 nnoremap dS di"
 nnoremap cS ci"
 nnoremap vS vi"
+nnoremap yS yi"
 
 "" Map quickly visual a function block
 nnoremap vm vawE%o

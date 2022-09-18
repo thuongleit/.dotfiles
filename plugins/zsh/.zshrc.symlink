@@ -87,19 +87,32 @@ setopt no_nomatch
 # Disable annoying confirm
 setopt rmstarsilent
 
+homebrew_path=
+
+if [[ $(arch) == 'arm64' ]]; then
+    # Macbook M1
+    homebrew_path='/opt/homebrew'
+else
+    homebrew_path='/usr/local'
+fi
+
 #autojump setup
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f $homebrew_path/etc/profile.d/autojump.sh ] && . $homebrew_path/etc/profile.d/autojump.sh
 
 #zsh-completions setup
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=($homebrew_path/share/zsh-completions $fpath)
 
 #zsh-autosuggestions setup
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $homebrew_path/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #load local bindkeys
 source $DOTFILES_PLUGIN/zsh/bindkeys.sh
 
 fpath+=$HOME/.zsh/pure
 
+export PATH="$homebrew_path/bin:$PATH"
+unset homebrew_path
+
 autoload -U promptinit; promptinit
 prompt pure
+PATH=./bin:$PATH
