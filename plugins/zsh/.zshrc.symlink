@@ -118,3 +118,6 @@ unset homebrew_path
 autoload -U promptinit; promptinit
 prompt pure
 PATH=./bin:$PATH
+
+# Created by `pipx` on 2023-08-04 18:16:31
+export PATH="$PATH:/Users/thuong/.local/bin"

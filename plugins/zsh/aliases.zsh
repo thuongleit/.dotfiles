@@ -71,3 +71,6 @@ alias bk=backup_file
 alias rr=move_files_to_trash
 alias cre=create_and_edit_new_file
 alias f=ranger
+alias python='python3'
+
+alias work='cd /Volumes/work/firmware/ecu/infotainment/apps/ivi-android-apps/'

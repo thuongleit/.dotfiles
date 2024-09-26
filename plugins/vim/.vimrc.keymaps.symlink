@@ -19,6 +19,8 @@ inoremap jj <esc>
 " jk is adding ; at the end
 inoremap jk <C-e>;<esc>
 
+nnoremap <C-[> <C-^> 
+
 " jk is adding to the end of line
 " inoremap jk <Esc>A
 

@@ -243,3 +243,17 @@ function write_link() {
     echo "DONE!"
 }
 alias wl=write_link
+
+
+function remove_untracked_files() {
+# List all of the untracked files in the current directory.
+# untracked_files=$(find . -type f -not -path './.git*' -not -path './.gitignore')
+# Remove all of the untracked files.
+    for file in $untracked_files; do
+        rm -f $file
+    done
+}
+    
+function optimize_video_file(){
+    ffmpeg -i $1 -vcodec libx265 -crf 30 output.mp4
+}
